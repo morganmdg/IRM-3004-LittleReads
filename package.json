@@ -2,14 +2,14 @@
   "name": "your-project-name",
   "version": "1.0.0",
   "description": "A brief description of your project",
-  "main": "index.js", // Entry point of your application
+  "main": "index.js",
   "scripts": {
-    "lint": "eslint .", // Command to run ESLint
-    "format": "prettier --write .", // Command to run Prettier
-    "start": "node index.js" // Command to start your application
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "start": "node index.js"
   },
   "devDependencies": {
-    "eslint": "^8.1.0", // ESLint dependency
-    "prettier": "^2.5.1" // Prettier dependency
+    "eslint": "^8.1.0",
+    "prettier": "^2.5.1"
   }
 }
