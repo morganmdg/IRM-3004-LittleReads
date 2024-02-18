@@ -1,0 +1,42 @@
+#Reference: https://github.com/marketplace/actions/lint-action
+name: Lint
+ 
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the main branch
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+ 
+jobs:
+  run-linters:
+    name: Run linters
+    runs-on: ubuntu-latest
+ 
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3
+ 
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 21.6.2
+ 
+      # ESLint, Prettier, and Stylelint must be in `package.json`
+ 
+      - name: Run CSS linting
+        run: npx stylelint "**/*.css"
+ 
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+ 
+      - name: Install Composer dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest --ansi
+ 
+      - name: Run PHP_CodeSniffer
+        run: php vendor/bin/phpcs
