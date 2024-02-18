@@ -1,3 +1,3 @@
 # IRM-3004
-Project Management - Group Project
-testing 
+IRM 3004 - Project Management
+Group 6: LittleReads Inc.
