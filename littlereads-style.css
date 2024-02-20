@@ -7,7 +7,7 @@ body {
 
 /* Header */
 .toolbar {
-  background-color: #38B6FF;
+  background-color: #38b6ff;
   color: #fff;
   display: flex;
   justify-content: space-between;
@@ -17,20 +17,17 @@ body {
 
 .toolbar h1 {
   font-family: "Protest Strike", sans-serif;
-  font-weight: 150; 
+  font-weight: 150;
   margin: 0;
   padding-left: 15px;
 }
 
-.book-icon, 
-.shelf-btn, 
-.dropdown-btn, 
+.book-icon,.shelf-btn,.dropdown-btn, 
 nav a {
   vertical-align: middle;
 }
 
-.shelf-btn, 
-.dropdown-btn {
+.shelf-btn,.dropdown-btn {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 800;
   background-color: #fbd055;
@@ -107,6 +104,10 @@ nav a {
   vertical-align: middle;
 }
 
+nav a:hover {
+  color: #fbd055;
+}
+
 .dropdown-menu a:hover {
   background-color: #ddd;
 }
@@ -114,6 +115,3 @@ nav a {
 .dropdown:hover .dropdown-menu {
   display: block;
 }
-nav a:hover {
-  color: #FBD055;
-};
