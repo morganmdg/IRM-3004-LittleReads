@@ -22,12 +22,15 @@ body {
   padding-left: 15px;
 }
 
-.book-icon,.shelf-btn,.dropdown-btn, 
+.book-icon,
+.shelf-btn,
+.dropdown-btn,
 nav a {
   vertical-align: middle;
 }
 
-.shelf-btn,.dropdown-btn {
+.shelf-btn,
+.dropdown-btn {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 800;
   background-color: #fbd055;
