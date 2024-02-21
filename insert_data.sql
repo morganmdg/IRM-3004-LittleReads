@@ -1,3 +1,5 @@
+-- dialect: postgres
+
 -- Inserting data into the Book table
 INSERT INTO Book (Title, Author, Genres, Language, ISBN, ImageLink) VALUES
     ('The Boy, the Mole, the Fox and the Horse', 'Charlie Mackesy', 'Fiction, Graphic Novels, Animals', 'English', '9781529105100', 'https://www.penguin.com.au/books/the-boy-the-mole-the-fox-and-the-horse-9781529105100'),

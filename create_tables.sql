@@ -1,3 +1,5 @@
+-- dialect: postgres
+
 -- Creates a table named Book in the database
 CREATE TABLE Book (
     BookID INT AUTO_INCREMENT PRIMARY KEY,
