@@ -1,11 +1,12 @@
-/* Homepage CSS */
+/* homepage CSS */
+
+/* toolbar all pages */
 body {
   font-family: "Nunito Sans", sans-serif;
   margin: 0;
   padding: 0;
 }
 
-/* Header */
 .toolbar {
   background-color: #38b6ff;
   color: #fff;
@@ -51,7 +52,7 @@ nav a {
   align-items: center;
 }
 
-/* Navigation */
+/* toolbar navigation */
 nav ul {
   list-style-type: none;
   margin: 0;
@@ -117,4 +118,54 @@ nav a:hover {
 
 .dropdown:hover .dropdown-menu {
   display: block;
+}
+
+/* body: sign/sign up buttons homepage */
+.btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  flex-direction: column;
+}
+
+.btn-1,
+.btn-2 {
+  display: block;
+  margin: 10px;
+  padding: 20px 60px;
+  border: none;
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.btn-1 {
+  background-color: #FF914D;
+  color: #fff;
+}
+
+.btn-2 {
+  background-color: #7ED957;
+  color: #fff;
+}
+
+.btn-1:hover,
+.btn-2:hover {
+  background-color: #fbd055;
+}
+
+/* body message */
+.welcome-message {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.welcome-message-body {
+  text-align: left;
+  margin-left: 40px;
+  margin-right: 70px;
 }
