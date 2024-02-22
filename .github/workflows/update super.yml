@@ -23,10 +23,9 @@ jobs:
 
       - name: Lint Code Base
         uses: github/super-linter@v4
+        with:
+          args: --sql-lint --sql-dialect=postgres
         env:
           VALIDATE_ALL_CODEBASE: false
           DEFAULT_BRANCH: "main"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          sql-lint: true
-          sql-dialect: postgres
