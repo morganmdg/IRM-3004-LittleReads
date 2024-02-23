@@ -37,7 +37,7 @@
 }
 
 /* Cursor change on hover for filter button */
-.explore-filter-btn:hover, 
+.explore-filter-btn:hover,
 .explore-filter-btn:focus {
   background-color: #fbd055;
   color: #333;
