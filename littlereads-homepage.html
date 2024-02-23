@@ -59,7 +59,7 @@ non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2
   <button class="btn-2" onclick="openSignUpPopup()">Sign up</button>
 </div>
 
-<!-- sign-in Popup -->
+<!-- sign-in popup -->
 <form action="signin.php" method="post">
   <div id="signin-popup" class="signin-popup-container popup-container">
     <img src="images/UserIcon-Colour-Icons8.png" class="user-icon" alt="user log in icon">
@@ -86,27 +86,22 @@ non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2
     <input type="text" placeholder="Enter Username" name="username" required>
     <label for="password"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="password" required>
-    <label>
-      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+     <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
     </label>
     <p>By creating an account, you agree to our <a href="#" style="color:dodgerblue">Terms &amp; Privacy</a>.</p>
     <div class="clearfix">
-      <button type="submit" class="signup-btn" onclick="userAction('signup')">Sign Up</button>
-      <button type="button" class="cancel-btn" onclick="closePopup('signup-popup')">Cancel</button>
-    </div>
+     <button type="submit" class="signup-btn" onclick="userAction('signup')">Sign Up</button>
+    <button type="button" class="cancel-btn" onclick="closePopup('signup-popup')">Cancel</button>
   </div>
 </form>
-
 <!--open/close/manage popup process ref: https://www.w3schools.com/howto/howto_js_popup.asp-->
 <script>
     function openPopup(popupId) {
       document.getElementById(popupId).style.display = "block";
     }
-
     function closePopup(popupId) {
       document.getElementById(popupId).style.display = "none";
     }
-
     function userAction(action) {
       if (action === 'signin') {
         alert("Sign In to be implemented");
@@ -114,7 +109,6 @@ non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2
         alert("Sign Up to be implemented");
       }
     }
-
     function openSignInPopup() {
       openPopup("signin-popup");
     }
