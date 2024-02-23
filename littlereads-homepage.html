@@ -26,14 +26,14 @@
 <div class="rightnav">
 <nav>
 <ul>
-<!--link-->
+<!--links-->
 <li><a href="#">Home</a></li>
 <li><a href="#">Explore</a></li>
 <li><a href="#">Contact</a></li>
 <li class="dropdown">
 <button class="dropdown-btn"><img src="images/MenuIcon-Icons8.png" class="menu-icon" alt="Drop down menu icon"></button>
 <div class="dropdown-menu">
-<!--link-->
+<!--links-->
 <a href="#">About</a> 
 <a href="#">Challenges</a>
 <a href="#">Resources</a>
@@ -55,8 +55,69 @@ non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2
 </div>
 <!--sign-in/sign-up ref:https://www.w3schools.com/howto/howto_css_signup_form.asp-->
 <div class="btn-container">
-<button class="btn-1">Sign in</button>
-<button class="btn-2">Sign up</button>
+<button class="btn-1" onclick="openSignInPopup()" >Sign in</button>
+<button class="btn-2" onclick="openSignUpPopup()" >Sign up</button>
 </div>
+<!-- sign-in Popup -->
+<form action="signin.php" method="post">
+<div id="signInPopup" class="signinpopup-container">
+<img src="images/UserIcon-Colour-Icons8.png" class="user-icon" alt="user log in icon">
+<h2> Welcome back! </h2>
+<p>Please enter your username and password below to log in to your LittleReads account.</p>
+<span class="close-btn" onclick="closeSignInPopup()">&times;</span>
+<label for="username"><b>Username</b></label>
+<input type="text" placeholder="Enter Username" name="username" required>
+<label for="password"><b>Password</b></label>
+<input type="password" placeholder="Enter Password" name="password" required>
+<button type="submit" class="signupbtn" onclick="signIn()">Sign Up</button>
+<button type="button" class="cancelbtn" onclick="closeSignInPopup()">Cancel</button>
+</div>
+</form>
+<!--open/close/manage sign in process ref: https://www.w3schools.com/howto/howto_js_popup.asp-->
+<script>
+function openSignInPopup() {
+document.getElementById("signInPopup").style.display = "block";
+}
+function closeSignInPopup() {
+document.getElementById("signInPopup").style.display = "none";
+}
+function signIn() {
+alert("To be implemented");
+}
+</script>
+<!-- sign-up popup -->
+<form action="signup.php" method="post">
+<div id="signUpPopup" class="signuppopup-container">
+<!--<img src="images/BeeIcon.png" class="bee-icon" alt="Bumblebee icon">-->
+<h2> Welcome to LittleReads! </h2>
+<h3> Please enter your information below to create a LittleReads account Parental approval required</h3>
+<span class="close-btn" onclick="closeSignUpPopup()">&times;</span>
+<label for="email"><b>Parent/guardians email</b></label>
+<input type="text" placeholder="Enter Email" name="email" required>
+<label for="username"><b>Username</b></label>
+<input type="text" placeholder="Enter Username" name="username" required>
+<label for="password"><b>Password</b></label>
+<input type="password" placeholder="Enter Password" name="password" required>
+<label>
+<input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+</label>
+<p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+<div class="clearfix">
+<button type="submit" class="signupbtn" onclick="signUp()">Sign Up</button>
+<button type="button" class="cancelbtn" onclick="closeSignUpPopup()">Cancel</button>
+</div>
+</form>
+<!--open/close/manage sign up process ref: https://www.w3schools.com/howto/howto_js_popup.asp-->
+<script>
+function openSignUpPopup() {
+document.getElementById("signUpPopup").style.display = "block";
+}
+function closeSignUpPopup() {
+document.getElementById("signUpPopup").style.display = "none";
+}
+function signUp() {
+alert("To be implemented");
+}
+</script>
 </body>
 </html>
