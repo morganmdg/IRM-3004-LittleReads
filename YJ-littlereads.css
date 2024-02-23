@@ -1,7 +1,7 @@
 /*EXPLORE PAGE CSS*/
 
 /*Style for search bar*/
-.exploreSearchStyle {
+.explore-Search-Style {
   margin: 15px 180px 100px 550px;
   width: 35%;
   border: 2px solid grey;
@@ -15,13 +15,13 @@
 }
 
 /*Cursor change on hover for search bar*/
-.exploreSearchStyle:hover {
+.explore-Search-Style:hover {
     cursor: auto;
     background-color: #fbd055;
 }
 
 /*Style for filter button*/
-.exploreFilterButton {
+.explore-Filter-Button {
   background-color: #ffffff;
   padding: 10px 10px 10px 10px;
   border: 2px solid grey;
@@ -37,19 +37,19 @@
 }
 
 /*Cursor change on hover for filter button*/
-.exploreFilterButton:hover, .exploreFilterButton:focus {
+.explore-Filter-Button:hover, .explore-Filter-Button:focus {
   background-color: #fbd055;
   color: #333;
 }
 
 /*Position of filter on page*/
-.exploreFilter {
+.explore-Filter {
   position: relative;
   display: inline-block;
 }
 
 /*Hides filter dropdown options by default*/
-.exploreFilterDropdownStyle {
+.explore-Filter-Dropdown-Style {
   display: none;
   position: absolute;
   background-color: #f6f6f6;
@@ -59,7 +59,7 @@
 }
 
 /*Style for filter dropdown options*/
-.exploreFilterDropdownStyle a {
+.explore-Filter-Dropdown-Style a {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
@@ -67,11 +67,11 @@
 }
 
 /*Colour changes when hovering over filter dropdown options*/
-.exploreFilterDropdownStyle a:hover {
+.explore-Filter-Dropdown-Style a:hover {
   background-color: #f1f1f1;
 }
 
 /*Display filter dropdown options after clicking button*/
-.showFilterDropdownOptions {
+.show-Filter-Dropdown-Options {
   display: block;
 }
