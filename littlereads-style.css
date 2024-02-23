@@ -211,7 +211,7 @@ nav a:hover {
   font-size: 40px;
 }
 
-.signinbtn {
+.signin-btn {
   background-color: #ff914d;
   float: left;
   width: 50%;
@@ -226,7 +226,7 @@ nav a:hover {
   font-weight: 800;
 }
 
-.signupbtn {
+.signup-btn {
   background-color: #7ed957;
   float: left;
   width: 50%;
@@ -241,7 +241,7 @@ nav a:hover {
   font-weight: 800;
 }
 
-.cancelbtn {
+.cancel-btn {
   background-color: #e64543;
   float: left;
   width: 50%;
