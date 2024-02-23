@@ -211,9 +211,10 @@ nav a:hover {
   font-size: 40px;
 }
 
-.signinbtn,
-.cancelbtn,
-.signupbtn {
+.signinbtn {
+  background-color: #ff914d;
+  float: left;
+  width: 50%;
   border: none;
   margin-left: 0;
   margin-top: 20px;
@@ -225,23 +226,34 @@ nav a:hover {
   font-weight: 800;
 }
 
-.signinbtn {
-  background-color: #ff914d;
-}
-
 .signupbtn {
   background-color: #7ed957;
+  float: left;
+  width: 50%;
+  border: none;
+  margin-left: 0;
+  margin-top: 20px;
+  padding: 18px 50px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
 }
 
 .cancelbtn {
   background-color: #e64543;
-}
-
-.cancelbtn,
-.signupbtn,
-.signinbtn {
   float: left;
   width: 50%;
+  border: none;
+  margin-left: 0;
+  margin-top: 20px;
+  padding: 18px 50px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
 }
 
 /* sign up pop up */
