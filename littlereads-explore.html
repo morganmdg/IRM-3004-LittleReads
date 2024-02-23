@@ -4,6 +4,7 @@
 <head>
 <meta charset="utf-8">
 <title>LittleReads</title>
+<link rel="stylesheet" href="YJ-littlereads.css">
 <link rel="stylesheet" href="littlereads-style.css">
 <!--imported google fonts-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,5 +44,34 @@
 </nav>
 </div>
 </header>
+<!--Yasmeen adding search bar-->
+<div class="explore-search">
+<input type="text" class="explore-search-style" placeholder="Search the explore page...">
+</div>
+<!--Yasmeen adding filter-->
+<script>
+	function dropdownFunction() {
+		document.getElementById ("explore-filter-dropdown").classList.toggle("show-filter-dropdown-options");
+	}
+</script>
+<div class="explore-filter">
+<button onclick="dropdownFunction()" class="explore-filter-btn">Filter</button>
+<div id="explore-filter-dropdown" class="explore-filter-dropdown-style">
+<a href="Adventure">Adventure</a>
+<a href="#animals">Animals</a>
+<a href="#classics">Classics</a>
+<a href="#comedy">Comedy</a>
+<a href="#education">Education</a>
+<a href="#fantasy">Fantasy</a>
+<a href="#fiction">Fiction</a>
+<a href="#geography">Geography</a>
+<a href="#graphicNovels">Graphic Novels</a>
+<a href="#horror">Horror</a>
+<a href="#memoirs">Memoirs</a>
+<a href="#mystery">Mystery</a>
+<a href="#nonfiction">Nonfiction</a>
+<a href="#poetry">Poetry</a>
+</div>
+</div>
 </body>
 </html>
