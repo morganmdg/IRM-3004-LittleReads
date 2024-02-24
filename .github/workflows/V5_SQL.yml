@@ -28,4 +28,4 @@ jobs:
           DEFAULT_BRANCH: "main"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          sql-dialect: postgres # Specify the SQL dialect here
+          args: --sql-dialect=postgres # Pass the SQL dialect as an argument
