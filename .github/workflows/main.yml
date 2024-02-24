@@ -1,0 +1,11 @@
+---
+- name: Sql-Lint
+  uses: Bidaya0/sql-lint-in-action@v0.0.2
+  with:
+    path: .
+    host: localhost
+    user: root
+    password: password123
+    driver: mysql
+    port: 3306
+    ignore_errors: ""
