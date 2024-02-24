@@ -1,3 +1,4 @@
+---
             - name: Sql-Lint
   # You may pin to the exact commit or the version.
   # uses: Bidaya0/sql-lint-in-action@89adf42e9a8e8b4016225560c89e318a3b39e1cf
