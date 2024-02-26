@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--head element with title, stylesheet, and imported google fonts-->
 <head>
 <meta charset="utf-8">
 <title>LittleReads</title>
 <link rel="stylesheet" href="littlereads-style.css">
-<!--imported google fonts-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet">
@@ -14,26 +12,22 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Protest+Strike&display=swap" rel="stylesheet">
 </head>
 <body>
-<!--toolbar that allows navigation across pages-->
 <header class="toolbar">
 <div class="leftnav">
 <h1><img src="images/BookIcon-Icons8.png" class="book-icon" alt="LittleReads Book Logo"> LittleReads</h1>
 </div>
-<!--my shelf button allows users to access profile page-->
 <div class="midnav">
 <button class="shelf-btn">My Shelf</button>
 </div>
 <div class="rightnav">
 <nav>
 <ul>
-<!--links-->
 <li><a href="#">Home</a></li>
 <li><a href="#">Explore</a></li>
 <li><a href="#">Contact</a></li>
 <li class="dropdown">
 <button class="dropdown-btn"><img src="images/MenuIcon-Icons8.png" class="menu-icon" alt="Drop down menu icon"></button>
 <div class="dropdown-menu">
-<!--links-->
 <a href="#">About</a> 
 <a href="#">Challenges</a>
 <a href="#">Resources</a>
@@ -43,7 +37,6 @@
 </nav>
 </div>
 </header>
-<!--welcome body message-->
 <div class="welcome-message"> <h1> Make reading fun with LittleReads! </h1></div>
 <div class="welcome-message-body">
 <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
@@ -53,15 +46,12 @@ aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in volup
 velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
 non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2>
 </div>
-<!--sign-in/sign-up ref: https://www.w3schools.com/howto/howto_css_signup_form.asp-->
 <div class="btn-container">
   <button class="btn-1" onclick="openSignInPopup()">Sign in</button>
   <button class="btn-2" onclick="openSignUpPopup()">Sign up</button>
 </div>
 
-<!-- sign-in popup -->
-<form action="signin.php" method="post">
-  <div id="signin-popup" class="signin-popup-container popup-container">
+<div id="signin-popup" class="signin-popup-container popup-container">
     <img src="images/UserIcon-Colour-Icons8.png" class="user-icon" alt="user log in icon">
     <h2> Welcome back! </h2>
     <p>Please enter your username and password below to log in to your LittleReads account.</p>
@@ -70,13 +60,11 @@ non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2
     <input type="text" placeholder="Enter Username" name="username" required>
     <label for="signin-password"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="password" required>
-    <button type="submit" class="signin-btn" onclick="userAction('signin')">Sign In</button>
+    <button type="button" class="signin-btn" onclick="signIn()">Sign In</button>
     <button type="button" class="cancel-btn" onclick="closePopup('signin-popup')">Cancel</button>
-  </div>
-</form>
-<!-- sign-up popup -->
-<form action="signup.php" method="post">
-  <div id="signup-popup" class="signup-popup-container popup-container">
+</div>
+
+<div id="signup-popup" class="signup-popup-container popup-container">
     <h2> Welcome to LittleReads! </h2>
     <h3> Please enter your information below to create a LittleReads account. Parental approval required</h3>
     <span class="close-btn" onclick="closePopup('signup-popup')">&times;</span>
@@ -86,28 +74,24 @@ non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2
     <input type="text" placeholder="Enter Username" name="username" required>
     <label for="signup-password"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="password" required>
-     <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+    <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
     <p>By creating an account, you agree to our <a href="#" style="color:dodgerblue">Terms &amp; Privacy</a>.</p>
     <div class="clearfix">
-     <button type="submit" class="signup-btn" onclick="userAction('signup')">Sign Up</button>
-    <button type="button" class="cancel-btn" onclick="closePopup('signup-popup')">Cancel</button>
-  </div>
-  </div>
-</form>
-<!--open/close/manage popup process ref: https://www.w3schools.com/howto/howto_js_popup.asp-->
+        <button type="button" class="signup-btn" onclick="signUp()">Sign Up</button>
+        <button type="button" class="cancel-btn" onclick="closePopup('signup-popup')">Cancel</button>
+    </div>
+</div>
+
+<div id="messages">
+    <!-- PHP messages will be displayed here -->
+</div>
+
 <script>
     function openPopup(popupId) {
       document.getElementById(popupId).style.display = "block";
     }
     function closePopup(popupId) {
       document.getElementById(popupId).style.display = "none";
-    }
-    function userAction(action) {
-      if (action === 'signin') {
-        alert("Sign In to be implemented");
-      } else if (action === 'signup') {
-        alert("Sign Up to be implemented");
-      }
     }
     function openSignInPopup() {
       openPopup("signin-popup");
@@ -119,6 +103,50 @@ non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2
     function closeSignUpPopup() {
       closePopup("signup-popup");
     }
-  </script>
+
+    function signIn() {
+        var username = document.getElementsByName('username')[0].value;
+        var password = document.getElementsByName('password')[0].value;
+        
+        // Perform AJAX request to PHP script
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "littlereads-login.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                document.getElementById('messages').innerHTML = xhr.responseText;
+                // Close both popups if sign-in is successful
+                if (xhr.responseText.indexOf("Welcome back") !== -1) {
+                    closePopup('signin-popup');
+                    closePopup('signup-popup');
+                }
+            }
+        };
+        xhr.send("username=" + username + "&password=" + password + "&signin=1");
+    }
+
+    function signUp() {
+        var email = document.getElementsByName('email')[0].value;
+        var username = document.getElementsByName('username')[1].value;
+        var password = document.getElementsByName('password')[1].value;
+        
+        // Perform AJAX request to PHP script
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "littlereads-login.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                document.getElementById('messages').innerHTML = xhr.responseText;
+                // Close both popups if sign-up is successful
+                if (xhr.responseText.indexOf("Sign up successful") !== -1) {
+                    closePopup('signin-popup');
+                    closePopup('signup-popup');
+                }
+            }
+        };
+        xhr.send("email=" + email + "&username=" + username + "&password=" + password + "&signup=1");
+    }
+</script>
+
 </body>
 </html>
