@@ -4,11 +4,13 @@
  * 
  * This file handles user sign-up and sign-in functionality.
  * 
- * @author Your Name
+ * @author Dominic Murphy
  * @version 1.0
  * @date February 27, 2024
  */
+?>
 
+<?php
 function sanitize_input($data) {
     $data = trim($data);
     $data = stripslashes($data);
@@ -46,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['signup'])) {
         $hashed_password = password_hash($password, PASSWORD_DEFAULT); // Hash the password
         $insert_query = "INSERT INTO login (username, password) VALUES ('$username', '$hashed_password')";
 
-        if ($conn->query($insert_query) === TRUE) {
+        if ($conn->query($insert_query) === true) {
             echo "Sign up successful! Welcome, $username!";
         } else {
             echo "Error: " . $conn->error;
