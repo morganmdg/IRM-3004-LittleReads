@@ -1,6 +1,4 @@
-
 <?php
-
 /**
  * littlereads-login.php
  * This file handles user sign-up and sign-in functionality.
@@ -8,10 +6,9 @@
  * @version 1.0
  * @date February 27, 2024
  */
-?>
 
-<?php
-function sanitize_input($data) {
+function sanitize_input($data) 
+{
     $data = trim($data);
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
