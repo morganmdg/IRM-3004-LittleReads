@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['signup'])) {
         if ($conn->query($insert_query) === TRUE) {
             echo "Sign up successful! Welcome, $username!";
         } else {
-            echo "Error: " . $insert_query . "<br>" . $conn->error;
+            echo "Error: " . $conn->error;
         }
     }
 }
@@ -68,4 +68,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['signin'])) {
 
 // Close the database connection
 $conn->close();
-?>
