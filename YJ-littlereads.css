@@ -42,7 +42,7 @@
   border: 2px solid grey;
   color: #333;
   border-radius: 7px;
-  margin: 15px 50px 100px 50px;
+  margin: 15px 50px 100px;
   width: 210%;
   float: right;
   font-family: "Nunito Sans", sans-serif;
@@ -113,7 +113,7 @@
 /* Grey box */
 .description-display-block {
   background-color: #ddd;
-  margin: 50px 130px 10px 130px;
+  margin: 50px 130px 10px;
   border-radius: 15px;
   width: 1550px;
   Height: 730px;
@@ -131,7 +131,6 @@
   width: 20%;
   font-weight: 700;
   font-size: 20px;
-  margin-left: 10px;
   margin-right: 50px;
   margin-bottom: 55px;
   margin-left: 250px;
