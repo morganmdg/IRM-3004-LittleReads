@@ -2,8 +2,6 @@
 
 -- Creates a table named Book in the database
 
--- All code linted from https://online.sqlfluff.com/
-
 CREATE TABLE Book (
     BookID SERIAL PRIMARY KEY,
     Title VARCHAR(255),
