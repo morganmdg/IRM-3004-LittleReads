@@ -1,6 +1,9 @@
 -- dialect: postgres
 
 -- Creates a table named Book in the database
+
+-- All code linted from https://online.sqlfluff.com/
+
 CREATE TABLE Book (
     BookID SERIAL PRIMARY KEY,
     Title VARCHAR(255),
@@ -10,5 +13,3 @@ CREATE TABLE Book (
     ISBN VARCHAR(50),
     ImageLink VARCHAR(255)
 );
-
-
