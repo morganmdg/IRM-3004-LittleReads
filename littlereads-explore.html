@@ -1,40 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--head element with title, stylesheet, and imported google fonts-->
 <head>
 <meta charset="utf-8">
-<title>LittleReads</title>
+<title>LittleReads - Explore</title>
 <link rel="stylesheet" href="YJ-littlereads.css">
 <link rel="stylesheet" href="littlereads-style.css">
-<!--imported google fonts-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Protest+Strike&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Include jQuery library -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-<!--toolbar that allows navigation across pages-->
 <header class="toolbar">
 <div class="leftnav">
 <h1><img src="images/BookIcon-Icons8.png" class="book-icon" alt="LittleReads Book Logo"> LittleReads</h1>
 </div>
-<!--my shelf button allows users to access profile page-->
 <div class="midnav">
 <button class="shelf-btn">My Shelf</button>
 </div>
 <div class="rightnav">
 <nav>
 <ul>
-<!--link-->
 <li><a href="#">Home</a></li>
 <li><a href="#">Explore</a></li>
 <li><a href="#">Contact</a></li>
 <li class="dropdown">
 <button class="dropdown-btn"><img src="images/MenuIcon-Icons8.png" class="menu-icon" alt="Drop down menu icon"></button>
 <div class="dropdown-menu">
-<!--link-->
 <a href="#">About</a> 
 <a href="#">Challenges</a>
 <a href="#">Resources</a>
@@ -44,20 +42,22 @@
 </nav>
 </div>
 </header>
-<!--Yasmeen adding search bar-->
+<div class="explore-scrollbar">
 <div class="explore-search">
 <input type="text" class="explore-search-style" placeholder="Search the explore page...">
+<button class="explore-search-btn">
+    <i class="fas fa-search"></i>
+</button>
 </div>
-<!--Yasmeen adding filter-->
 <script>
 	function dropdownFunction() {
 		document.getElementById ("explore-filter-dropdown").classList.toggle("show-filter-dropdown-options");
 	}
 </script>
 <div class="explore-filter">
-<button onclick="dropdownFunction()" class="explore-filter-btn">Filter</button>
+<button onclick="dropdownFunction()" class="explore-filter-btn">Filter<i class="fas fa-chevron-down"></i></button>
 <div id="explore-filter-dropdown" class="explore-filter-dropdown-style">
-<a href="Adventure">Adventure</a>
+<a href="#adventure">Adventure</a>
 <a href="#animals">Animals</a>
 <a href="#classics">Classics</a>
 <a href="#comedy">Comedy</a>
@@ -73,5 +73,22 @@
 <a href="#poetry">Poetry</a>
 </div>
 </div>
+</div>
+
+<div class="books-container" id="booksContainer">
+</div>
+
+<script>
+    // When the page is fully loaded
+    $(document).ready(function(){
+        // Fetch and insert books from search.php into booksContainer
+        $('#booksContainer').load('search.php');
+    });
+
+    // Function to navigate to description page
+    function goToDescription(isbn) {
+        window.location.href = 'littlereads-description.html?isbn=' + isbn;
+    }
+</script>
 </body>
 </html>
