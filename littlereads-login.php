@@ -1,9 +1,9 @@
+
 <?php
+
 /**
  * littlereads-login.php
- * 
  * This file handles user sign-up and sign-in functionality.
- * 
  * @author Dominic Murphy
  * @version 1.0
  * @date February 27, 2024
