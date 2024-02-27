@@ -115,11 +115,14 @@ non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && xhr.status === 200) {
                 document.getElementById('messages').innerHTML = xhr.responseText;
+<<<<<<< Updated upstream
                 // Close both popups if sign-in is successful
                 if (xhr.responseText.indexOf("Welcome back") !== -1) {
                     closePopup('signin-popup');
                     closePopup('signup-popup');
                 }
+=======
+>>>>>>> Stashed changes
             }
         };
         xhr.send("username=" + username + "&password=" + password + "&signin=1");
@@ -137,11 +140,14 @@ non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && xhr.status === 200) {
                 document.getElementById('messages').innerHTML = xhr.responseText;
+<<<<<<< Updated upstream
                 // Close both popups if sign-up is successful
                 if (xhr.responseText.indexOf("Sign up successful") !== -1) {
                     closePopup('signin-popup');
                     closePopup('signup-popup');
                 }
+=======
+>>>>>>> Stashed changes
             }
         };
         xhr.send("email=" + email + "&username=" + username + "&password=" + password + "&signup=1");
