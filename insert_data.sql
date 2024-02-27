@@ -24,3 +24,45 @@ INSERT INTO Book (Title, Author, Genres, Language, ISBN, ImageLink) VALUES
     ('El Deafo', 'Cece Bell', 'Nonfiction, Graphic Novels, Memoirs', 'English', '9781419710209', 'https://www.indigo.ca/en-ca/el-deafo/9781419710209.html')
 ;
 
+-- Testing data in the User table
+INSERT INTO User (UserPicture, Username, Password, Email, Level) VALUES
+('https://xsgames.co/randomusers/assets/images/favicon.png', 'James3', 'James3!', 'jamie3@gmail.com', 'Level 1 - Emerging Reader'),
+('https://i.pinimg.com/564x/1b/14/34/1b1434c7d78bca9e24bcb89e5126903c.jpg', 'Rachel2', 'Rachel2!', 'rachelm2@gmail.com', 'Level 2 - Literary Explorer'),
+('https://i.pinimg.com/236x/b4/4b/1e/b44b1e13b07e920823112b5de12a1bbe.jpg', 'Timothy3', 'Timothy3!', '1timothy3@gmail.com', 'Level 3 - Reading Wiz'),
+('https://art.pixilart.com/13e07bd455dcf46.png', 'Matthew4', 'Matthew4!', 'matthewjs4@gmail.com', 'Level 4 - Page Turner,'),
+('https://i.redd.it/5560va6tsg191.jpg', 'Mary', 'Mary4!', 'maryjoe4@gmail.com', 'Level 5');
+;
+
+-- Inserting data into the Review table
+INSERT INTO Review (UserID, ReviewText) VALUES
+    (1, 'This book was amazing! Highly recommend it.'),
+    (2, 'I enjoyed reading this book. It was well-written.'),
+    (3, 'Great story and characters. Really enjoyed it.'),
+    (4, 'One of the best books I''ve read. Captivating from start to finish.'),
+    (5, 'Not my cup of tea. Didn''t enjoy it much.'),
+    (6, 'Interesting concept but execution fell short for me.');
+
+
+-- Inserting data into the BookLevel table
+INSERT INTO BookLevel (BookName, BookDescription, Genre, QuantityAvailable) VALUES
+    ('The Boy, the Mole, the Fox and the Horse', 'A heartwarming tale of friendship and self-discovery', 'Fiction, Graphic Novels, Animals', '20'),
+    ('Charlotte''s Web', 'A beloved classic about friendship and bravery', 'Fiction, Classics, Animals', '15'),
+    ('The Secret Garden', 'A magical story of healing and renewal', 'Fiction, Classics, Fantasy', '18'),
+    ('The Wind in the Willows', 'An enchanting adventure with memorable animal characters', 'Fiction, Classics, Animals', '12'),
+    ('The Secret of the Old Clock (Nancy Drew Mystery Stories #1)', 'The first book in the iconic Nancy Drew series', 'Fiction, Classics, Mystery', '10');
+
+-- Inserting data into the Challenge table
+INSERT INTO Challenge (ChallengeName, ChallengeDescription, ChallengeDifficulty) VALUES
+    ('Reading Challenge: 30 Books in 30 Days', 'Read 30 books in 30 days and share your progress with friends!', 'Hard'),
+    ('Genre Exploration Challenge', 'Explore different genres by reading one book from each genre and share your insights.', 'Medium'),
+    ('Author Spotlight Challenge', 'Choose an author and read all of their books within a specified time frame.', 'Medium'),
+    ('Buddy Reading Challenge', 'Team up with a friend and read a book together, then discuss your thoughts.', 'Easy'),
+    ('Book Review Challenge', 'Write a review for every book you read and earn badges for your insightful reviews!', 'Medium');
+
+-- Inserting data into the Friends table
+INSERT INTO Friends (FriendPicture, FriendName) VALUES
+    ('https://p16-va.lemon8cdn.com/tos-maliva-v-ac5634-us/o0nqADOAnQEM0eY13JTbBdYfruAYCtQRhlIIDB~tplv-tej9nj120t-origin.webp', 'Emily Johnson'),
+    ('https://img.freepik.com/free-vector/hand-drawn-side-profile-cartoon-illustration_23-2150517168.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1708905600&semt=ais', 'Michael Brown'),
+    ('https://static.vecteezy.com/system/resources/previews/008/420/425/original/cute-penguin-wearing-earmuff-cartoon-icon-illustration-animal-winter-icon-concept-isolated-premium-flat-cartoon-style-vector.jpg', 'Sophia Miller'),
+    ('https://thumbs.dreamstime.com/z/man-cheeky-smile-big-nose-cartoon-profile-avatar-sticker-label-flat-design-man-cheeky-smile-big-nose-cartoon-231882826.jpg', 'Noah Wilson'),
+    ('https://m.media-amazon.com/images/I/31Cd9UQp6eL._AC_UF1000,1000_QL80_.jpg', 'Olivia Martinez');
