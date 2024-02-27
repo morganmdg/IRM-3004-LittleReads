@@ -22,7 +22,7 @@
 <h1><img src="images/BookIcon-Icons8.png" class="book-icon" alt="LittleReads Book Logo"> LittleReads</h1>
 </div>
 <div class="midnav">
-<button class="shelf-btn">My Shelf</button>
+    <button class="shelf-btn" id="myShelfBtn">My Shelf</button>
 </div>
 <div class="rightnav">
 <nav>
@@ -83,6 +83,11 @@
     $(document).ready(function(){
         // Fetch and insert books from search.php into booksContainer
         $('#booksContainer').load('search.php');
+        
+        // Fetch and insert username into My Shelf button
+        $.get('getUsername.php', function(username) {
+            $('#myShelfBtn').text('My Shelf ' + username);
+        });
     });
 
     // Function to navigate to description page
