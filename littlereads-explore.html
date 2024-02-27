@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--head element with title, stylesheet, and imported google fonts-->
+<head>
+<meta charset="utf-8">
+<title>LittleReads - Explore</title>
+<link rel="stylesheet" href="YJ-littlereads.css">
+<link rel="stylesheet" href="littlereads-style.css">
+<!--imported google fonts-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Protest+Strike&display=swap" rel="stylesheet">
+<!--Adding icons stylesheet-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<!--Yasmeen adding scrollbar-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<!--toolbar that allows navigation across pages-->
+<header class="toolbar">
+<div class="leftnav">
+<h1><img src="images/BookIcon-Icons8.png" class="book-icon" alt="LittleReads Book Logo"> LittleReads</h1>
+</div>
+<!--my shelf button allows users to access profile page-->
+<div class="midnav">
+<button class="shelf-btn">My Shelf</button>
+</div>
+<div class="rightnav">
+<nav>
+<ul>
+<!--link-->
+<li><a href="#">Home</a></li>
+<li><a href="#">Explore</a></li>
+<li><a href="#">Contact</a></li>
+<li class="dropdown">
+<button class="dropdown-btn"><img src="images/MenuIcon-Icons8.png" class="menu-icon" alt="Drop down menu icon"></button>
+<div class="dropdown-menu">
+<!--link-->
+<a href="#">About</a> 
+<a href="#">Challenges</a>
+<a href="#">Resources</a>
+</div>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<!--Yasmeen adding div for scrollbar-->
+<div class="explore-scrollbar">
+<!--Yasmeen adding search bar-->
+<div class="explore-search">
+<input type="text" class="explore-search-style" placeholder="Search the explore page...">
+<button class="explore-search-btn">
+    <i class="fas fa-search"></i>
+</button>
+</div>
+<!--Yasmeen adding filter-->
+<script>
+	function dropdownFunction() {
+		document.getElementById ("explore-filter-dropdown").classList.toggle("show-filter-dropdown-options");
+	}
+</script>
+<div class="explore-filter">
+<button onclick="dropdownFunction()" class="explore-filter-btn">Filter<i class="fas fa-chevron-down"></i></button>
+<div id="explore-filter-dropdown" class="explore-filter-dropdown-style">
+<a href="#adventure">Adventure</a>
+<a href="#animals">Animals</a>
+<a href="#classics">Classics</a>
+<a href="#comedy">Comedy</a>
+<a href="#education">Education</a>
+<a href="#fantasy">Fantasy</a>
+<a href="#fiction">Fiction</a>
+<a href="#geography">Geography</a>
+<a href="#graphicNovels">Graphic Novels</a>
+<a href="#horror">Horror</a>
+<a href="#memoirs">Memoirs</a>
+<a href="#mystery">Mystery</a>
+<a href="#nonfiction">Nonfiction</a>
+<a href="#poetry">Poetry</a>
+</div>
+</div>
+</div>
+</body>
+</html>

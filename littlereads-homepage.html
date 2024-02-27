@@ -1,11 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>LittleReads</title>
-    <link rel="stylesheet" href="LittleReads-Style.css">
-  </head>
-  <body>
-    <!-- littlereads homepage content -->
-  </body>
+<!--head element with title, stylesheet, and imported google fonts-->
+<head>
+<meta charset="utf-8">
+<title>LittleReads</title>
+<link rel="stylesheet" href="littlereads-style.css">
+<!--imported google fonts-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Protest+Strike&display=swap" rel="stylesheet">
+</head>
+<body>
+<!--toolbar that allows navigation across pages-->
+<header class="toolbar">
+<div class="leftnav">
+<h1><img src="images/BookIcon-Icons8.png" class="book-icon" alt="LittleReads Book Logo"> LittleReads</h1>
+</div>
+<!--my shelf button allows users to access profile page-->
+<div class="midnav">
+<button class="shelf-btn">My Shelf</button>
+</div>
+<div class="rightnav">
+<nav>
+<ul>
+<!--links-->
+<li><a href="#">Home</a></li>
+<li><a href="#">Explore</a></li>
+<li><a href="#">Contact</a></li>
+<li class="dropdown">
+<button class="dropdown-btn"><img src="images/MenuIcon-Icons8.png" class="menu-icon" alt="Drop down menu icon"></button>
+<div class="dropdown-menu">
+<!--links-->
+<a href="#">About</a> 
+<a href="#">Challenges</a>
+<a href="#">Resources</a>
+</div>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<!--welcome body message-->
+<div class="welcome-message"> <h1> Make reading fun with LittleReads! </h1></div>
+<div class="welcome-message-body">
+<h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate 
+velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2>
+</div>
+<!--sign-in/sign-up ref: https://www.w3schools.com/howto/howto_css_signup_form.asp-->
+<div class="btn-container">
+  <button class="btn-1" onclick="openSignInPopup()">Sign in</button>
+  <button class="btn-2" onclick="openSignUpPopup()">Sign up</button>
+</div>
+
+<!-- sign-in popup -->
+<form action="signin.php" method="post">
+  <div id="signin-popup" class="signin-popup-container popup-container">
+    <img src="images/UserIcon-Colour-Icons8.png" class="user-icon" alt="user log in icon">
+    <h2> Welcome back! </h2>
+    <p>Please enter your username and password below to log in to your LittleReads account.</p>
+    <span class="close-btn" onclick="closePopup('signin-popup')">&times;</span>
+    <label for="signin-username"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" required>
+    <label for="signin-password"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required>
+    <button type="submit" class="signin-btn" onclick="userAction('signin')">Sign In</button>
+    <button type="button" class="cancel-btn" onclick="closePopup('signin-popup')">Cancel</button>
+  </div>
+</form>
+<!-- sign-up popup -->
+<form action="signup.php" method="post">
+  <div id="signup-popup" class="signup-popup-container popup-container">
+    <h2> Welcome to LittleReads! </h2>
+    <h3> Please enter your information below to create a LittleReads account. Parental approval required</h3>
+    <span class="close-btn" onclick="closePopup('signup-popup')">&times;</span>
+    <label for="email"><b>Parent/guardians email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+    <label for="signup-username"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" required>
+    <label for="signup-password"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required>
+     <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+    <p>By creating an account, you agree to our <a href="#" style="color:dodgerblue">Terms &amp; Privacy</a>.</p>
+    <div class="clearfix">
+     <button type="submit" class="signup-btn" onclick="userAction('signup')">Sign Up</button>
+    <button type="button" class="cancel-btn" onclick="closePopup('signup-popup')">Cancel</button>
+  </div>
+  </div>
+</form>
+<!--open/close/manage popup process ref: https://www.w3schools.com/howto/howto_js_popup.asp-->
+<script>
+    function openPopup(popupId) {
+      document.getElementById(popupId).style.display = "block";
+    }
+    function closePopup(popupId) {
+      document.getElementById(popupId).style.display = "none";
+    }
+    function userAction(action) {
+      if (action === 'signin') {
+        alert("Sign In to be implemented");
+      } else if (action === 'signup') {
+        alert("Sign Up to be implemented");
+      }
+    }
+    function openSignInPopup() {
+      openPopup("signin-popup");
+    }
+
+	function openSignUpPopup() {
+      openPopup("signup-popup");
+    }
+    function closeSignUpPopup() {
+      closePopup("signup-popup");
+    }
+  </script>
+</body>
 </html>

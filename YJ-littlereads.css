@@ -1,0 +1,172 @@
+/* Explore page CSS */
+
+/* Style for search bar */
+.explore-search-style {
+  margin: 15px 20px 100px 530px;
+  width: 35%;
+  border: 2px solid grey;
+  border-radius: 7px;
+  padding: 10px;
+  float: left;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  color: #333;
+}
+
+/* Cursor change on hover for search bar */
+.explore-search-style:hover {
+  cursor: auto;
+  background-color: #fbd055;
+}
+
+/* Search button */
+.explore-search-btn {
+  background-color: #fbd055;
+  border-radius: 7px;
+  border: 2px solid grey;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  cursor: pointer;
+  margin-top: 15px;
+  padding: 10px;
+  width: 4%;
+  color: #333;
+}
+
+/* Style for filter button */
+.explore-filter-btn {
+  background-color: #fff;
+  padding: 10px;
+  border: 2px solid grey;
+  color: #333;
+  border-radius: 7px;
+  margin: 15px 50px 100px;
+  width: 210%;
+  float: right;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  text-align: left;
+  display: flex;
+}
+
+/* Down arrow icon for filter button */
+.explore-filter-btn i {
+  margin-top: 3px;
+  margin-left: 290px;
+  position: absolute;
+}
+
+/* Cursor change on hover for filter button */
+.explore-filter-btn:hover {
+  background-color: #fbd055;
+}
+
+/* Position of filter on page */
+.explore-filter {
+  position: relative;
+  float: right;
+  top: -61px;
+  left: -35px;
+}
+
+/* Hides filter dropdown options by default */
+.explore-filter-dropdown-style {
+  display: none;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 800;
+  background-color: #fbd055;
+  color: #333;
+  border: none;
+  padding: 35px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  cursor: pointer;
+  margin-top: 62px;
+  position: absolute;
+  right:60px;
+}
+
+/* Style for filter dropdown options */
+.explore-filter-dropdown-style a {
+  color: #333;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Colour changes when hovering over filter dropdown options */
+.explore-filter-dropdown-style a:hover {
+  background-color: #fff;
+}
+
+/* Display filter dropdown options after clicking button */
+.show-filter-dropdown-options {
+  display: block;
+  width: 90%;
+}
+
+/* Description page CSS */
+
+/* Grey box */
+.description-display-block {
+  background-color: #ddd;
+  margin: 50px 130px 10px;
+  border-radius: 15px;
+  width: 1550px;
+  Height: 730px;
+  display: flex;
+}
+
+/* Share button */
+.desciption-share-btn {
+  background-color: #fbd055;
+  border-radius: 15px;
+  font-family: "Nunito Sans", sans-serif;
+  color: #333;
+  padding: 20px;
+  border: none;
+  width: 20%;
+  font-weight: 700;
+  font-size: 20px;
+  margin-right: 50px;
+  margin-bottom: 55px;
+  margin-left: 250px;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+/* Review button */
+.desciption-reviews-btn {
+  background-color: #F28C28;
+  border-radius: 15px;
+  font-family: "Nunito Sans", sans-serif;
+  padding: 20px;
+  border: none;
+  width: 20%;
+  font-weight: 700;
+  color: #333;
+  font-size: 20px;
+  margin-right: 50px;
+  margin-bottom: 55px;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+/* Add to shelf button */
+.desciption-shelf-btn {
+  background-color: #0BDA51;
+  border-radius: 15px;
+  font-family: "Nunito Sans", sans-serif;
+  color: #333;
+  padding: 20px;
+  border: none;
+  width: 20%;
+  margin-bottom: 55px;
+  font-weight: 700;
+  font-size: 20px;
+  align-self: flex-end;
+  cursor: pointer;
+}
