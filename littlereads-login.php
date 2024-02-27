@@ -31,8 +31,7 @@ if ($conn->connect_error) {
 }
 
 // Sign Up
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['signup'])) 
-{
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['signup'])) {
     $username = sanitize_input($_POST['username']);
     $password = sanitize_input($_POST['password']);
 
@@ -56,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['signup']))
 }
 
 // Sign In
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['signin'])) 
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['signin']))
 {
     $username = sanitize_input($_POST['username']);
     $password = sanitize_input($_POST['password']);
@@ -67,8 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['signin']))
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        if (password_verify($password, $row['password'])) 
-        {
+        if (password_verify($password, $row['password'])) {
             echo "Welcome back, $username!";
         } else {
             echo "Incorrect password. Please try again.";
