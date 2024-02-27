@@ -3,7 +3,7 @@
 <!--head element with title, stylesheet, and imported google fonts-->
 <head>
 <meta charset="utf-8">
-<title>LittleReads - Explore</title>
+<title>LittleReads - Desciption</title>
 <link rel="stylesheet" href="YJ-littlereads.css">
 <link rel="stylesheet" href="littlereads-style.css">
 <!--imported google fonts-->
@@ -48,40 +48,16 @@
 </nav>
 </div>
 </header>
-<!--Yasmeen adding div for scrollbar-->
-<div class="explore-scrollbar">
-<!--Yasmeen adding search bar-->
-<div class="explore-search">
-<input type="text" class="explore-search-style" placeholder="Search the explore page...">
-<button class="explore-search-btn">
-    <i class="fas fa-search"></i>
-</button>
-</div>
-<!--Yasmeen adding filter-->
-<script>
-	function dropdownFunction() {
-		document.getElementById ("explore-filter-dropdown").classList.toggle("show-filter-dropdown-options");
-	}
-</script>
-<div class="explore-filter">
-<button onclick="dropdownFunction()" class="explore-filter-btn">Filter<i class="fas fa-chevron-down"></i></button>
-<div id="explore-filter-dropdown" class="explore-filter-dropdown-style">
-<a href="#adventure">Adventure</a>
-<a href="#animals">Animals</a>
-<a href="#classics">Classics</a>
-<a href="#comedy">Comedy</a>
-<a href="#education">Education</a>
-<a href="#fantasy">Fantasy</a>
-<a href="#fiction">Fiction</a>
-<a href="#geography">Geography</a>
-<a href="#graphicNovels">Graphic Novels</a>
-<a href="#horror">Horror</a>
-<a href="#memoirs">Memoirs</a>
-<a href="#mystery">Mystery</a>
-<a href="#nonfiction">Nonfiction</a>
-<a href="#poetry">Poetry</a>
-</div>
-</div>
+<div class="description-display-block">
+<!--Placeholder for book information
+<h3>Title: </h3>
+<h3>Author: </h3>
+<h3>Genres: </h3>
+<h3>ISBN: </h3>
+<h3>Language: </h3>-->
+<button class="desciption-share-btn">Share&nbsp;&nbsp;&nbsp;<i class="fa fa-share-square"></i></button>
+<button class="desciption-reviews-btn">Reviews&nbsp;&nbsp;&nbsp;<i class="fa fa-star"></i></button>
+<button class="desciption-shelf-btn">Add to shelf&nbsp;&nbsp;&nbsp;<i class="fa fa-plus-square"></i></button>
 </div>
 </body>
 </html>
