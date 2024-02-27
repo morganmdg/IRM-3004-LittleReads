@@ -9,7 +9,6 @@
  * @date February 27, 2024
  */
 
- // Function to sanitize input data
 function sanitize_input($data) {
     $data = trim($data);
     $data = stripslashes($data);
