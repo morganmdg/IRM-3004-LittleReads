@@ -55,8 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['signup'])) {
 }
 
 // Sign In
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['signin']))
-{
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['signin'])) {
     $username = sanitize_input($_POST['username']);
     $password = sanitize_input($_POST['password']);
 
