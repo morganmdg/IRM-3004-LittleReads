@@ -1,5 +1,15 @@
 <?php
-// Function to sanitize input data
+/**
+ * littlereads-login.php
+ * 
+ * This file handles user sign-up and sign-in functionality.
+ * 
+ * @author Your Name
+ * @version 1.0
+ * @date February 27, 2024
+ */
+
+ // Function to sanitize input data
 function sanitize_input($data) {
     $data = trim($data);
     $data = stripslashes($data);
