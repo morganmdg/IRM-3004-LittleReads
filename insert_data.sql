@@ -23,3 +23,4 @@ INSERT INTO Book (Title, Author, Genres, Language, ISBN, ImageLink) VALUES
     ('Ghosts', 'Raina Telgemeier', 'Fiction, Graphic Novels', 'English', '9781338115567', 'https://www.abebooks.com/9781338115567/Ghosts-1338115561/plp'),
     ('El Deafo', 'Cece Bell', 'Nonfiction, Graphic Novels, Memoirs', 'English', '9781419710209', 'https://www.indigo.ca/en-ca/el-deafo/9781419710209.html')
 ;
+
