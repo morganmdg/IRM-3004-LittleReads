@@ -1,5 +1,5 @@
 ---
-name: Lint Code Base But Ignoring SQL
+name: Lint Code Base, but Ignoring SQL
 
 on:
   push:
@@ -28,4 +28,5 @@ jobs:
           DEFAULT_BRANCH: "main"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          args: --sql-dialect=postgres --ignore .sql # Pass the SQL dialect as an argument and ignore SQL files
+          args: --ignore .sql # Ignore SQL files
+
