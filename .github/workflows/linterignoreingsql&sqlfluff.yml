@@ -1,5 +1,5 @@
 ---
-name: Lint Code Base, but Ignoring SQL
+name: Lint Code Base, but Ignoring SQL & SQLFluff
 
 on:
   push:
@@ -28,5 +28,5 @@ jobs:
           DEFAULT_BRANCH: "main"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          args: --ignore .sql # Ignore SQL files
+          args: --no-sqlfluff --ignore .sql # Ignore SQL files
 
