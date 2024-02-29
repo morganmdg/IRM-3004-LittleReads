@@ -15,7 +15,8 @@ $password = ""; // Database password
 $dbname = "test"; // Database name
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname); // @psalm-suppress UndefinedClass
+// Psalm-disable-next-line
+$conn = new mysqli($servername, $username, $password, $dbname); 
 
 // Check connection
 if ($conn->connect_error) {
