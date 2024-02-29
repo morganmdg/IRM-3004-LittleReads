@@ -23,15 +23,15 @@ if ($conn->connect_error) {
 }
 
 // Sign Up
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['signup'])) {
-    $username = trim($_POST['username']); // Removed sanitize_input function
-    $password = trim($_POST['password']); // Removed sanitize_input function
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['signup'])) {
+    $username = isset($_POST['username']) ? trim($_POST['username']) : ''; // Removed sanitize_input function
+    $password = isset($_POST['password']) ? trim($_POST['password']) : ''; // Removed sanitize_input function
 
     // Check if username already exists
     $check_query = "SELECT * FROM login WHERE username='$username'";
     $result = $conn->query($check_query);
 
-    if ($result->num_rows > 0) {
+    if ($result && $result->num_rows > 0) {
         echo "Username already exists. Please choose a different one.";
     } else {
         // Insert new user into the database
@@ -47,15 +47,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['signup'])) {
 }
 
 // Sign In
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['signin'])) {
-    $username = trim($_POST['username']); // Removed sanitize_input function
-    $password = trim($_POST['password']); // Removed sanitize_input function
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['signin'])) {
+    $username = isset($_POST['username']) ? trim($_POST['username']) : ''; // Removed sanitize_input function
+    $password = isset($_POST['password']) ? trim($_POST['password']) : ''; // Removed sanitize_input function
 
     // Check if username exists
     $check_query = "SELECT * FROM login WHERE username='$username'";
     $result = $conn->query($check_query);
 
-    if ($result->num_rows > 0) {
+    if ($result && $result->num_rows > 0) {
         $row = $result->fetch_assoc();
         if (password_verify($password, $row['password'])) {
             echo "Welcome back, $username!";
