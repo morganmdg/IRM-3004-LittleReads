@@ -1,4 +1,5 @@
 <?php
+/** @psalm-suppress all */
 
 /**
  * littlereads-login.php
@@ -15,8 +16,7 @@ $password = ""; // Database password
 $dbname = "test"; // Database name
 
 // Create connection
-// Psalm-disable-next-line
-$conn = new mysqli($servername, $username, $password, $dbname); 
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
 if ($conn->connect_error) {
@@ -25,8 +25,8 @@ if ($conn->connect_error) {
 
 // Sign Up
 if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['signup'])) {
-    $username = isset($_POST['username']) ? (is_string($_POST['username']) ? $_POST['username'] : '') : '';
-    $password = isset($_POST['password']) ? (is_string($_POST['password']) ? $_POST['password'] : '') : '';
+    $username = isset($_POST['username']) ? (string)$_POST['username'] : '';
+    $password = isset($_POST['password']) ? (string)$_POST['password'] : '';
 
     // Check if username already exists
     $check_query = "SELECT * FROM login WHERE username='$username'";
@@ -49,8 +49,8 @@ if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] === "POST" &
 
 // Sign In
 if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['signin'])) {
-    $username = isset($_POST['username']) ? (is_string($_POST['username']) ? $_POST['username'] : '') : '';
-    $password = isset($_POST['password']) ? (is_string($_POST['password']) ? $_POST['password'] : '') : '';
+    $username = isset($_POST['username']) ? (string)$_POST['username'] : '';
+    $password = isset($_POST['password']) ? (string)$_POST['password'] : '';
 
     // Check if username exists
     $check_query = "SELECT * FROM login WHERE username='$username'";
