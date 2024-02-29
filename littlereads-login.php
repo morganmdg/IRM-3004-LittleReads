@@ -23,9 +23,9 @@ if ($conn->connect_error) {
 }
 
 // Sign Up
-if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['signup'])) {
-    $username = isset($_POST['username']) ? (string) $_POST['username'] : ''; // Ensure $username is a string
-    $password = isset($_POST['password']) ? (string) $_POST['password'] : ''; // Ensure $password is a string
+if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['signup'])) {
+    $username = isset($_POST['username']) ? (is_string($_POST['username']) ? $_POST['username'] : '') : ''; // Removed sanitize_input function
+    $password = isset($_POST['password']) ? (is_string($_POST['password']) ? $_POST['password'] : '') : ''; // Removed sanitize_input function
 
     // Check if username already exists
     $check_query = "SELECT * FROM login WHERE username='$username'";
@@ -47,9 +47,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['signup'])) {
 }
 
 // Sign In
-if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['signin'])) {
-    $username = isset($_POST['username']) ? (string) $_POST['username'] : ''; // Ensure $username is a string
-    $password = isset($_POST['password']) ? (string) $_POST['password'] : ''; // Ensure $password is a string
+if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['signin'])) {
+    $username = isset($_POST['username']) ? (is_string($_POST['username']) ? $_POST['username'] : '') : ''; // Removed sanitize_input function
+    $password = isset($_POST['password']) ? (is_string($_POST['password']) ? $_POST['password'] : '') : ''; // Removed sanitize_input function
 
     // Check if username exists
     $check_query = "SELECT * FROM login WHERE username='$username'";
