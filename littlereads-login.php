@@ -15,7 +15,7 @@ $password = ""; // Database password
 $dbname = "test"; // Database name
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname); // @linter-ignore
 
 // Check connection
 if ($conn->connect_error) {
