@@ -14,14 +14,6 @@ $username = "pma"; // Database username
 $password = ""; // Database password
 $dbname = "test"; // Database name
 
-function sanitize_input($data)
-{
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
-
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -32,8 +24,8 @@ if ($conn->connect_error) {
 
 // Sign Up
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['signup'])) {
-    $username = sanitize_input($_POST['username']);
-    $password = sanitize_input($_POST['password']);
+    $username = trim($_POST['username']); // Removed sanitize_input function
+    $password = trim($_POST['password']); // Removed sanitize_input function
 
     // Check if username already exists
     $check_query = "SELECT * FROM login WHERE username='$username'";
@@ -56,8 +48,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['signup'])) {
 
 // Sign In
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['signin'])) {
-    $username = sanitize_input($_POST['username']);
-    $password = sanitize_input($_POST['password']);
+    $username = trim($_POST['username']); // Removed sanitize_input function
+    $password = trim($_POST['password']); // Removed sanitize_input function
 
     // Check if username exists
     $check_query = "SELECT * FROM login WHERE username='$username'";
