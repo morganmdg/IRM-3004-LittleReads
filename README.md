@@ -1,8 +1,8 @@
-**IRM 3004 - Project Management Team 6 - LittleReads Inc.**
+# IRM 3004 - Project Management Team 6 - LittleReads Inc.
 
 **Description of Application**
 
-LittleReads is an online platform catering to children aged 8 to 12, offering a curated space for discovering and reviewing books. It's designed to infuse excitement into reading by delivering personalized book recommendations tailored to each child's age and interests. Parents, teachers, and librarians are encouraged to join the platform to foster a collaborative reading environment. Key success metrics include user sign-ups, shared reviews, user engagement, and ad-generated revenue.
+LittleReads is an online platform for kids aged 8 to 12, designed to help them discover and review books. It aims to make reading fun and engaging by providing personalized book recommendations based on age and interests. Parents, teachers, and librarians can also join to encourage reading together. Success metrics include the number of sign-ups, reviews shared, user interactions, and revenue from ads.
 
 **Screenshots:**
 
@@ -32,4 +32,4 @@ Pending:
 
 Cancelled:
 
-- To streamline workload effectively, LittleReads Inc. has decided to discontinue the development of the 'friends' and 'challenges' features. This decision aims to allocate resources more efficiently and prioritize essential project elements.
+- Due to workload effectively, LittleReads Inc. has decided to discontinue the development of the 'friends' and 'challenges' features. This decision aims to allocate resources more efficiently and prioritize essential project elements.
