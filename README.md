@@ -1,6 +1,4 @@
-# IRM-3004
-IRM 3004 - Project Management
-Team 6 - LittleReads Inc.
+IRM 3004 - Project Management Team 6 - LittleReads Inc.
 
 **Description of Application**
 
@@ -32,12 +30,8 @@ Not Yet Done:
 - Functional implementation of 'My Shelf' Page: The 'my shelf' feature, allowing users to save and organize their favorite books, has not been fully implemented yet. Again, due to ongoing complications with the frontend and backend integration. This feature enhances the user experience by providing a personalized reading list.
 - Complete integration of frontend and backend code: Ultimately, while some integration has been done, the full integration of frontend and backend code is still in progress. This integration is essential for ensuring the functionality of the platform.
 
+
 Cancelled:
 
 - In order to prioritize workload effectively, LittleReads Inc. has opted to discontinue the development of the 'friends' and 'challenges' features. This decision was made to allocate resources more efficiently and concentrate on essential project elements.
-
-
-
-
-
 
