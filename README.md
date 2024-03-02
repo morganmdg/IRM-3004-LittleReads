@@ -1,4 +1,4 @@
-# IRM 3004 - Project Management Team 6 - LittleReads Inc.
+# IRM 3004 - Project Management Team 6 - LittleReads Inc
 
 **Description of Application**
 
@@ -32,4 +32,4 @@ Pending:
 
 Cancelled:
 
-- Due to workload effectively, LittleReads Inc. has decided to discontinue the development of the 'friends' and 'challenges' features. This decision aims to allocate resources more efficiently and prioritize essential project elements.
+- Due to workload considerations, LittleReads Inc. has decided to discontinue the development of the 'friends' and 'challenges' features. This decision aims to allocate resources more efficiently and prioritize essential project elements.
