@@ -6,7 +6,7 @@ LittleReads is an online platform for kids aged 8 to 12,
 designed to help them discover and review books.
 It aims to make reading fun and engaging by providing
 personalized book recommendations based on age and interests.
-Parents, teachers, and librarians can also join to encourage reading together. 
+Parents, teachers, and librarians can also join to encourage reading together.
 Success metrics include the number of sign-ups, reviews shared,
 user interactions, and revenue from ads.
 
