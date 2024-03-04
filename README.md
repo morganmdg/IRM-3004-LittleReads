@@ -68,6 +68,7 @@ Measure product success through user acquisition (sign-ups), user engagement (bo
 and revenue generated from curated advertisements by project completion, April 4, 2024.
 
 **Definition of Done**
+
 Product items are considered done when the code has been cleaned and enhanced using linters
 and reviewed and approved by another group member. The code must pass both requirements to be marked as done.
 
