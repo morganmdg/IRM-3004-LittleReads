@@ -57,3 +57,17 @@ Cancelled:
 - Due to workload management considerations, LittleReads Inc. has decided to discontinue the development of the
 'friends' and 'challenges' features.
 This decision aims to allocate resources more efficiently and prioritize essential project elements.
+
+**Product Goal**
+
+Develop an online community for children aged 8 to 12 that provides
+curated reading recommendations to enhance literacy engagement and development outcomes.
+Foster collaboration amongst children, parents, teachers, and librarians to help encourage
+children to explore, discover, and review books tailored to their age range, reading level, and preferences.
+Measure product success through user acquisition (sign-ups), user engagement (book reviews, goals, challenges, sharing, etc.),
+and revenue generated from curated advertisements by project completion, April 4, 2024.
+
+**Definition of Done**
+Product items are considered done when the code has been cleaned and enhanced using linters
+and reviewed and approved by another group member. The code must pass both requirements to be marked as done.
+
