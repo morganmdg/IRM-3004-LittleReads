@@ -1,0 +1,32 @@
+---
+name: NewLint
+
+on:
+  push: null
+  pull_request: null
+
+jobs:
+  build:
+    name: NewLint
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: read
+      statuses: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Super-linter
+        uses: super-linter/super-linter@v6.3.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_PHP_BUILTIN: false
+          VALIDATE_PHP: false
+          VALIDATE_PHP_PHPCS: false
+          VALIDATE_PHP_PHPSTAM: false
+          VALIDATE_PHP_PSALM: false
