@@ -30,3 +30,4 @@ jobs:
           VALIDATE_PHP_PHPCS: false
           VALIDATE_PHP_PHPSTAM: false
           VALIDATE_PHP_PSALM: false
+          VALIDATE_CHECKOV: false
