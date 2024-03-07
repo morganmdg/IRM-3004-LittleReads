@@ -15,7 +15,7 @@ $username = "pma"; // Database username
 $password = ""; // Database password
 $dbname = "test"; // Database name
 
-// Create connection
+// Create connection to database
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
