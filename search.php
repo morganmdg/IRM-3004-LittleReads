@@ -13,8 +13,8 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Output opening div tag for booksContainer
-echo "<div class='books-container' id='booksContainer'>";
+// Output opening div tag for books-contained
+echo "<div class='books-container' id='books-contained'>";
 
 // SQL query to fetch books
 $sql = "SELECT Title, Genres, ImageLink, ISBN FROM book";
@@ -34,7 +34,7 @@ if ($result->num_rows > 0) {
     echo "No books found.";
 }
 
-// Output closing div tag for booksContainer
+// Output closing div tag for books-contained
 echo "</div>";
 
 // Close connection
