@@ -39,4 +39,3 @@ echo "</div>";
 
 // Close connection
 $conn->close();
-?>
