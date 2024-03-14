@@ -1,0 +1,64 @@
+/* profile body styling */
+body {
+  font-family: "Nunito Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  }
+
+/* align profile box to the left */
+  .container {
+  display: flex;
+  justify-content: flex-start; 
+  padding: 20px;
+  }
+
+/* profile box formatting */
+  .profile-box {
+  width: 400px; 
+  background-color: #f3f3f3;
+  padding: 20px;
+  margin-right: 50px;
+  border-radius: 10px;
+  }
+
+  .profile-picture {
+  width: 150px;
+  height: 150px; 
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  overflow: hidden; 
+  }
+
+  .profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  }
+
+  .profile-info {
+  text-align: left;
+  }
+
+/* book shelf formatting */
+  .shelfbooks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 0 auto 10px;
+  }
+
+  .book {
+  width: 180px;
+  height: 240px;
+  margin: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #d3d3d3;
+  }
+
+  .book img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+  }
