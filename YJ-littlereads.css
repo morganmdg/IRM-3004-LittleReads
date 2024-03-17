@@ -1,4 +1,7 @@
 /* Explore page CSS */
+.book {
+  margin-top: 100px; /* Adjust as needed */
+}
 
 /* Style for search bar */
 .explore-search-style {
