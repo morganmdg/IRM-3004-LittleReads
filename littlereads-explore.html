@@ -83,7 +83,7 @@
     // When the page is fully loaded
     $(document).ready(function(){
         // Fetch and insert books from search.php into booksContainer
-        $('#booksContainer').load('search.php');
+        $('#books-contained').load('search.php');
         
         // Fetch and insert username into My Shelf button
         $.get('getUsername.php', function(username) {
