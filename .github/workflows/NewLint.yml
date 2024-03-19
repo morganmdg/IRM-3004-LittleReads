@@ -26,7 +26,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VALIDATE_PHP_BUILTIN: false
-          VALIDATE_PHP: false
           VALIDATE_PHP_PHPCS: false
           VALIDATE_PHP_PHPSTAM: false
           VALIDATE_PHP_PSALM: false
