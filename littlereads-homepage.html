@@ -17,14 +17,14 @@
 <h1><img src="images/BookIcon-Icons8.png" class="book-icon" alt="LittleReads Book Logo"> LittleReads</h1>
 </div>
 <div class="midnav">
-<button id="my-shelf-btn" class="shelf-btn">My Shelf</button>
+<a href="littlereads-profilepage.html" class="shelf-btn">My Shelf</a>
 </div>
 <div class="rightnav">
 <nav>
 <ul>
-<li><a href="#">Home</a></li>
-<li><a href="#">Explore</a></li>
-<li><a href="#">Contact</a></li>
+<li><a href="littlereads-homepage.html">Home</a></li>
+<li><a href="littlereads-explore.html">Explore</a></li>
+<li><a href="littlereads-contactpage.html">Contact</a></li>
 <li class="dropdown">
 <button class="dropdown-btn"><img src="images/MenuIcon-Icons8.png" class="menu-icon" alt="Drop down menu icon"></button>
 <div class="dropdown-menu">
@@ -39,19 +39,18 @@
 </header>
 <div class="welcome-message"> <h1> Make reading fun with LittleReads! </h1></div>
 <div class="welcome-message-body">
-<h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
-aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate 
-velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
-non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2>
+<h2>Welcome to LittleReads!</h2>
+<h2> We're an online reading community dedicated to helping kids find new and exciting books perfect for their age range, reading level, and personal tastes.
+We believe that reading should be fun and safe, that's why we work closely with parents and kids to create a collaborative space where everyone 
+can come together to discover new stories and share their love for reading.</h2>
+<h2>Ready to join the fun? Sign up with the help of a parent below and create an account today! </h2>
 </div>
 <div class="btn-container">
   <button class="btn-1" onclick="openSignInPopup()">Sign in</button>
   <button class="btn-2" onclick="openSignUpPopup()">Sign up</button>
 </div>
 
-<div id="signin-popup" class="signin-popup-container popup-container">
+<div id="signin-popup" class="signin-popup-container popup-container" style="display:none;">
     <img src="images/UserIcon-Colour-Icons8.png" class="user-icon" alt="user log in icon">
     <h2> Welcome back! </h2>
     <p>Please enter your username and password below to log in to your LittleReads account.</p>
@@ -64,7 +63,7 @@ non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2
     <button type="button" class="cancel-btn" onclick="closePopup('signin-popup')">Cancel</button>
 </div>
 
-<div id="signup-popup" class="signup-popup-container popup-container">
+<div id="signup-popup" class="signup-popup-container popup-container" style="display:none;">
     <h2> Welcome to LittleReads! </h2>
     <h3> Please enter your information below to create a LittleReads account. Parental approval required</h3>
     <span class="close-btn" onclick="closePopup('signup-popup')">&times;</span>
@@ -87,21 +86,16 @@ non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2
 </div>
 
 <script>
-    function openPopup(popupId) {
-      document.getElementById(popupId).style.display = "block";
-    }
-    function closePopup(popupId) {
-      document.getElementById(popupId).style.display = "none";
-    }
     function openSignInPopup() {
-      openPopup("signin-popup");
+        document.getElementById('signin-popup').style.display = "block";
     }
 
     function openSignUpPopup() {
-      openPopup("signup-popup");
+        document.getElementById('signup-popup').style.display = "block";
     }
-    function closeSignUpPopup() {
-      closePopup("signup-popup");
+
+    function closePopup(popupId) {
+        document.getElementById(popupId).style.display = "none";
     }
 
     function signIn() {
