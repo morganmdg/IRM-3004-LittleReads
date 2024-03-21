@@ -6,6 +6,7 @@
  * This file handles user sign-up and sign-in functionality.
  * @author Dominic Murphy
  * @version 1.0
+ * 
  * @date March 21, 2024
  */
 // Database connection
@@ -53,7 +54,7 @@ if ($result->num_rows > 0) {
         echo "<h2>" . $row["Title"] . "</h2>";
         echo "<p>Genres: " . $row["Genres"] . "</p>";
         echo "<div class='image'>";
-        echo "<img src='" . $row["ImageLink"] . "' alt='" . 
+        echo "<img src='" . $row["ImageLink"] . "' alt='" .
         $row["Title"] . "' onclick='goToDescription(\"" . $row["ISBN"] . "\")'>";
         echo "</div>";
         echo "</div>";
