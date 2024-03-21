@@ -1,9 +1,17 @@
 <?php
+/** @psalm-suppress all */
+
+/**
+ * littlereads-shelf.php
+ * @author Jacob Abraham
+ * @version 1.0
+ * @date March 21, 2024
+ */
 // Start the session
 session_start();
 
 // Check if user_id is set in the session
-if(isset($_SESSION['user_id'])) {
+if (isset($_SESSION['user_id'])) {
     // Database connection
     $servername = "localhost";
     $username = "pma";
@@ -65,9 +73,9 @@ if(isset($_SESSION['user_id'])) {
 }
 
 // Function to fetch book information from the "book" table based on book ID
-function fetchBookInfo($bookID, $conn) {
+function fetchBookInfo($bookID, $conn) 
+{
     $sql = "SELECT * FROM book WHERE BookID = '$bookID'";
     $result = mysqli_query($conn, $sql);
     return mysqli_fetch_assoc($result);
 }
-?>

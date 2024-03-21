@@ -2,11 +2,10 @@
 /** @psalm-suppress all */
 
 /**
- * littlereads-login.php
- * This file handles user sign-up and sign-in functionality.
+ * littlereads-search.php
  * @author Dominic Murphy
  * @version 1.0
- * @date February 27, 2024
+ * @date March 21, 2024
  */
 // Database connection
 $servername = "localhost";
