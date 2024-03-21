@@ -22,9 +22,9 @@
 <div class="rightnav">
 <nav>
 <ul>
-<li><a href="#">Home</a></li>
-<li><a href="#">Explore</a></li>
-<li><a href="#">Contact</a></li>
+<li><a href="littlereads-homepage.html">Home</a></li>
+<li><a href="littlereads-explore.html">Explore</a></li>
+<li><a href="littlereads-contactpage.html">Contact</a></li>
 <li class="dropdown">
 <button class="dropdown-btn"><img src="images/MenuIcon-Icons8.png" class="menu-icon" alt="Drop down menu icon"></button>
 <div class="dropdown-menu">
@@ -51,7 +51,7 @@ non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2
   <button class="btn-2" onclick="openSignUpPopup()">Sign up</button>
 </div>
 
-<div id="signin-popup" class="signin-popup-container popup-container">
+<div id="signin-popup" class="signin-popup-container popup-container" style="display:none;">
     <img src="images/UserIcon-Colour-Icons8.png" class="user-icon" alt="user log in icon">
     <h2> Welcome back! </h2>
     <p>Please enter your username and password below to log in to your LittleReads account.</p>
@@ -64,7 +64,7 @@ non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2
     <button type="button" class="cancel-btn" onclick="closePopup('signin-popup')">Cancel</button>
 </div>
 
-<div id="signup-popup" class="signup-popup-container popup-container">
+<div id="signup-popup" class="signup-popup-container popup-container" style="display:none;">
     <h2> Welcome to LittleReads! </h2>
     <h3> Please enter your information below to create a LittleReads account. Parental approval required</h3>
     <span class="close-btn" onclick="closePopup('signup-popup')">&times;</span>
@@ -87,21 +87,16 @@ non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2
 </div>
 
 <script>
-    function openPopup(popupId) {
-      document.getElementById(popupId).style.display = "block";
-    }
-    function closePopup(popupId) {
-      document.getElementById(popupId).style.display = "none";
-    }
     function openSignInPopup() {
-      openPopup("signin-popup");
+        document.getElementById('signin-popup').style.display = "block";
     }
 
     function openSignUpPopup() {
-      openPopup("signup-popup");
+        document.getElementById('signup-popup').style.display = "block";
     }
-    function closeSignUpPopup() {
-      closePopup("signup-popup");
+
+    function closePopup(popupId) {
+        document.getElementById(popupId).style.display = "none";
     }
 
     function signIn() {
