@@ -21,6 +21,7 @@ if (isset($_SESSION['user_id'])) {
     $dbname = "test";
 
     // Create connection
+    /** @psalm-suppress UndefinedClass */
     $conn = new mysqli($servername, $username, $password, $dbname);
 
     // Check connection
