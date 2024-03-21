@@ -9,6 +9,7 @@
  * 
  * @date March 21, 2024
  */
+
 // Database connection
 $servername = "localhost";
 $username = "pma";
