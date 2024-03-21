@@ -111,25 +111,36 @@
   width: 90%;
 }
 
-/* Formatting the books */
+/* Formatting the books container */
 .books-container {
-  font-family: "Nunito Sans", sans-serif;
-  font-size: 100px;
-  color: #38b6ff;
-  font-weight: 800;
-  margin-top: -150px;
+  margin-top: -200px;
   margin-bottom: 30px;
   display: flex;
   flex-wrap: wrap;
-  width: 80%;
+  width: 100%;
   justify-content: center;
 }
 
 /* Formatting the individual books */
 .book {
-  padding: 500px;
-  color: #fff;
+  font-family: "Nunito Sans", sans-serif;
+  color: #38b6ff;
+  font-weight: 800;
+  font-size: 20px;
+  padding: 50px;
+  margin-right: 200px;
+  width: 15%;
+  justify-content: center;
 }
+
+.image {
+  width: 600px;
+  height: 500px;
+  overflow: hidden;
+}
+
+
+
 
 
 /* Description page CSS */
