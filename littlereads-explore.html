@@ -58,20 +58,22 @@
 <div class="explore-filter">
 <button onclick="dropdownFunction()" class="explore-filter-btn">Filter<i class="fas fa-chevron-down"></i></button>
 <div id="explore-filter-dropdown" class="explore-filter-dropdown-style">
-<a href="#adventure">Adventure</a>
-<a href="#animals">Animals</a>
-<a href="#classics">Classics</a>
-<a href="#comedy">Comedy</a>
-<a href="#education">Education</a>
-<a href="#fantasy">Fantasy</a>
-<a href="#fiction">Fiction</a>
-<a href="#geography">Geography</a>
-<a href="#graphicNovels">Graphic Novels</a>
-<a href="#horror">Horror</a>
-<a href="#memoirs">Memoirs</a>
-<a href="#mystery">Mystery</a>
-<a href="#nonfiction">Nonfiction</a>
-<a href="#poetry">Poetry</a>
+
+<a href="#" onclick="filterBooks('', '', '')">None</a>
+<a href="#" onclick="filterBooks('adventure', '', '')">Adventure</a>
+<a href="#" onclick="filterBooks('', 'animals', '')">Animals</a>
+<a href="#" onclick="filterBooks('', '', 'Classics')">Classics</a>
+<a href="#" onclick="filterBooks('', '', 'Education')">Education</a>
+<a href="#" onclick="filterBooks('', '', 'Fantasy')">Fantasy</a>
+<a href="#" onclick="filterBooks('', '', 'Fiction')">Fiction</a>
+<a href="#" onclick="filterBooks('', '', 'Geography')">Geography</a>
+<a href="#" onclick="filterBooks('', '', 'Graphic Novels')">Graphic Novels</a>
+<a href="#" onclick="filterBooks('', '', 'Horror')">Horror</a>
+<a href="#" onclick="filterBooks('', '', 'Memoirs')">Memoirs</a>
+<a href="#" onclick="filterBooks('', '', 'Mystery')">Mystery</a>
+<a href="#" onclick="filterBooks('', '', 'Nonfiction')">Nonfiction</a>
+<a href="#" onclick="filterBooks('', '', 'Poetry')">Poetry</a>
+<a href="#" onclick="filterBooks('', '', 'comedy')">Comedy</a>
 </div>
 </div>
 </div>
@@ -95,6 +97,21 @@
     function goToDescription(isbn) {
         window.location.href = 'littlereads-description.html?isbn=' + isbn;
     }
+
+    function filterBooks(genre1, genre2, genre3) {
+    $.ajax({
+        type: "GET",
+        url: "search.php",
+        data: { genre1: genre1, genre2: genre2, genre3: genre3 },
+        success: function(response) {
+            $('#books-contained').html(response);
+        },
+        error: function() {
+            alert('Error fetching books.');
+        }
+    });
+}
+
 </script>
 </body>
 </html>
