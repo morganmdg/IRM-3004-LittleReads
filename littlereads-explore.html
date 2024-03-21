@@ -82,8 +82,8 @@
 <script>
     // When the page is fully loaded
     $(document).ready(function(){
-        // Fetch and insert books from search.php into booksContainer
-        $('#booksContainer').load('search.php');
+        // Fetch and insert books from search.php into books-container
+        $('#books-contained').load('search.php');
         
         // Fetch and insert username into My Shelf button
         $.get('getUsername.php', function(username) {
@@ -91,10 +91,11 @@
         });
     });
 
-    // Function to navigate to description page
     function goToDescription(isbn) {
-        window.location.href = 'littlereads-description.html?isbn=' + isbn;
+        var url = 'http://localhost/myPHP/IRM-3004-LittleReads/littlereads-desciption.html?isbn=' + isbn;
+        window.location.href = url;
     }
+
 </script>
 </body>
 </html>

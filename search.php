@@ -1,7 +1,7 @@
 <?php
 // Database connection
 $servername = "localhost";
-$username = "pma";
+$username = "root";
 $password = "";
 $dbname = "test";
 
@@ -39,3 +39,5 @@ echo "</div>";
 
 // Close connection
 $conn->close();
+
+// Function to navigate to description page

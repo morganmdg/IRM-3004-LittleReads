@@ -1,10 +1,11 @@
-<!-- littlereads-description.php -->
 <?php
+        echo "error 0";
+
 // Description Page PHP
 if(isset($_GET['isbn'])) {
     // Database connection
     $servername = "localhost";
-    $username = "pma";
+    $username = "root";
     $password = "";
     $dbname = "test";
 
@@ -27,9 +28,28 @@ if(isset($_GET['isbn'])) {
     if ($result->num_rows > 0) {
         // Fetch book information
         $book = $result->fetch_assoc();
+        // Extract information from the $book array
+        $title = $book['Title'];
+        $author = $book['Author'];
+        $genres = $book['Genres'];
+        $language = $book['Language'];
+        $isbn = $book['ISBN'];
+
+        // Display the book information within the desired div
+        echo "<div class='description-display-block' id='display-block'>";
+
+        echo "<h1>Title: $title</h1>";
+        echo "<p>Author: $author</p>";
+        echo "<p>Genres: $genres</p>";
+        echo "<p>Language: $language</p>";
+        echo "<p>ISBN: $isbn</p>";
+        echo "</div>";
     } else {
         // If no book found, redirect to explore page or show a message
-        header("Location: explore.php");
+        header("Location: littlereads-explore.html");
+
+        echo "error 1";
+
         exit();
     }
 
@@ -37,42 +57,8 @@ if(isset($_GET['isbn'])) {
     $conn->close();
 } else {
     // If no ISBN provided, redirect to explore page or show a message
-    header("Location: explore.php");
+    echo "error 2";
+
+    header("Location: littlereads-explore.html");
     exit();
 }
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<title>LittleReads - Description</title>
-<link rel="stylesheet" href="YJ-littlereads.css">
-<link rel="stylesheet" href="littlereads-style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Protest+Strike&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-<header class="toolbar">
-    <!-- Header and other elements remain the same -->
-</header>
-
-<div class="description-display-block">
-    <h3>Title: <?php echo $book['Title']; ?></h3>
-    <h3>Author: <?php echo $book['Author']; ?></h3>
-    <h3>Genres: <?php echo $book['Genres']; ?></h3>
-    <h3>ISBN: <?php echo $book['ISBN']; ?></h3>
-    <h3>Language: <?php echo $book['Language']; ?></h3>
-
-    <!-- Buttons for Share, Reviews, and Add to Shelf -->
-</div>
-
-<!-- JavaScript and other elements remain the same -->
-</body>
-</html>
