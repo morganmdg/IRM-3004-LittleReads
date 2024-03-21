@@ -43,7 +43,9 @@ if ($result->num_rows > 0) {
         echo "<div class='book'>";
         echo "<h2>" . $row["Title"] . "</h2>";
         echo "<p>Genres: " . $row["Genres"] . "</p>";
+        echo "<div class='image'>";
         echo "<img src='" . $row["ImageLink"] . "' alt='" . $row["Title"] . "' onclick='goToDescription(\"" . $row["ISBN"] . "\")'>";
+        echo "</div>";
         echo "</div>";
     }
 } else {
