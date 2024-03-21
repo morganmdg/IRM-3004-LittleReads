@@ -108,6 +108,34 @@
   width: 90%;
 }
 
+/* Formatting the books container */
+.books-container {
+  margin-top: -200px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+
+/* Formatting the individual books */
+.book {
+  font-family: "Nunito Sans", sans-serif;
+  color: #38b6ff;
+  font-weight: 800;
+  font-size: 200px;
+  padding: 50px;
+  margin-right: 200px;
+  width: 15%;
+  justify-content: center;
+}
+
+.image {
+  width: 600px;
+  height: 500px;
+  overflow: hidden;
+}
+
 /* Description page CSS */
 
 /* Grey box */
