@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <body>
 <header class="toolbar">
 <div class="leftnav">
@@ -48,5 +49,16 @@
 <button class="desciption-reviews-btn">Reviews&nbsp;&nbsp;&nbsp;<i class="fa fa-star"></i></button>
 <button class="desciption-shelf-btn">Add to shelf&nbsp;&nbsp;&nbsp;<i class="fa fa-plus-square"></i></button>
 </div>
+
+<script>
+    // When the page is fully loaded
+    $(document).ready(function(){
+        // Fetch and insert books from show-description.php into books-container
+        $('#display-block').load('show-description.php');
+        
+    });
+
+</script>
+
 </body>
 </html>

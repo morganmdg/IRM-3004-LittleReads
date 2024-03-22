@@ -1,8 +1,16 @@
 <?php
-        echo "error 0";
 
 // Description Page PHP
-if(isset($_GET['isbn'])) {
+$referring_url = $_SERVER['HTTP_REFERER'];
+
+// Parse the URL to extract parameters
+$url_components = parse_url($referring_url);
+parse_str($url_components['query'], $params);
+
+if(isset($params['isbn'])) {
+    // Get the ISBN from the referring URL
+    $isbn = $params['isbn'];
+
     // Database connection
     $servername = "localhost";
     $username = "root";
@@ -18,10 +26,10 @@ if(isset($_GET['isbn'])) {
     }
 
     // Escape ISBN to prevent SQL injection
-    $isbn = $conn->real_escape_string($_GET['isbn']);
+    $isbn = $conn->real_escape_string($isbn);
 
     // SQL query to fetch book information
-    $sql = "SELECT Title, Author, Genres, Language, ISBN FROM book WHERE ISBN = '$isbn'";
+    $sql = "SELECT Title, Author, Genres, Language, ISBN, ImageLink FROM book WHERE ISBN = '$isbn'";
     $result = $conn->query($sql);
 
     // Check if the book with the provided ISBN exists
@@ -34,31 +42,25 @@ if(isset($_GET['isbn'])) {
         $genres = $book['Genres'];
         $language = $book['Language'];
         $isbn = $book['ISBN'];
+        $imageLink = $book['ImageLink']; // Extract image link
 
         // Display the book information within the desired div
         echo "<div class='description-display-block' id='display-block'>";
-
         echo "<h1>Title: $title</h1>";
         echo "<p>Author: $author</p>";
         echo "<p>Genres: $genres</p>";
         echo "<p>Language: $language</p>";
         echo "<p>ISBN: $isbn</p>";
+        echo "<img src='$imageLink' alt='Book Cover'>";
         echo "</div>";
     } else {
-        // If no book found, redirect to explore page or show a message
-        header("Location: littlereads-explore.html");
-
-        echo "error 1";
-
-        exit();
+        // If no book found, show a message
+        echo "No book found with ISBN: " . $isbn;
     }
 
     // Close connection
     $conn->close();
 } else {
-    // If no ISBN provided, redirect to explore page or show a message
-    echo "error 2";
-
-    header("Location: littlereads-explore.html");
-    exit();
+    // If no ISBN provided, show a message
+    echo "No ISBN provided";
 }
