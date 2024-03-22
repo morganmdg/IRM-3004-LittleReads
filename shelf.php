@@ -21,7 +21,7 @@ function fetchUserShelvedBooks(string $userID): array
     $username = "pma";
     $password = "";
     $dbname = "test";
-    
+
     // phpsalm-silence UndefinedClass
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -82,7 +82,7 @@ function fetchBookInfo(string $bookID): array
     return $bookInfo;
 }
 
-// Function to generate shelf HTML
+// Function to generate shelf HTML!
 function generateShelfHTML(string $userID): string 
 {
     $html = '';
