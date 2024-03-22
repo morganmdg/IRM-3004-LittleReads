@@ -14,38 +14,18 @@ session_start();
 
 // Check if user_id is set in the session
 if (isset($_SESSION['user_id'])) {
-    // Database connection
-    $servername = "localhost";
-    $username = "pma";
-    $password = "";
-    $dbname = "test";
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
     // Output opening div tag for shelf-id
     echo "<div class='shelfbooks' id='shelf-id'>";
 
     // Fetch current user's shelved books
-    $userID = $_SESSION['user_id']; // Assuming you have the user's ID stored in a session variable
-    $sql = "SELECT Shelved FROM myshelf WHERE UserID = '$userID'";
-    $result = mysqli_query($conn, $sql);
+    $shelvedBooks = fetchUserShelvedBooks($_SESSION['user_id']);
 
     // Check if there are shelved books for the user
-    if (mysqli_num_rows($result) > 0) {
-        // Fetch and display each unique shelved book
-        $row = mysqli_fetch_assoc($result);
-        $shelvedBooks = explode('-', $row['Shelved']);
-        $shelvedBooks = array_unique($shelvedBooks); // Remove duplicates
-
+    if (!empty($shelvedBooks)) {
+        // Display each unique shelved book
         foreach ($shelvedBooks as $bookID) {
             // Fetch book information from the "book" table based on the book ID
-            $bookInfo = fetchBookInfo($bookID, $conn);
+            $bookInfo = fetchBookInfo($bookID);
 
             // Display book details
             echo '<div class="book">';
@@ -66,18 +46,73 @@ if (isset($_SESSION['user_id'])) {
 
     // Output closing div tag for shelf-id
     echo "</div>";
-
-    // Close connection
-    $conn->close();
 } else {
     // Session user_id is not set, handle accordingly
     echo "User ID not set in session.";
 }
 
-// Function to fetch book information from the "book" table based on book ID
-function fetchBookInfo($bookID, $conn)
+// Function to fetch current user's shelved books
+function fetchUserShelvedBooks($userID)
 {
+    // Database connection
+    $servername = "localhost";
+    $username = "pma";
+    $password = "";
+    $dbname = "test";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    // Fetch shelved books
+    $sql = "SELECT Shelved FROM myshelf WHERE UserID = '$userID'";
+    $result = $conn->query($sql);
+
+    $shelvedBooks = [];
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $shelvedBooks = explode('-', $row['Shelved']);
+        $shelvedBooks = array_unique($shelvedBooks); // Remove duplicates
+    }
+
+    // Close connection
+    $conn->close();
+
+    return $shelvedBooks;
+}
+
+// Function to fetch book information from the "book" table based on book ID
+function fetchBookInfo($bookID)
+{
+    // Database connection
+    $servername = "localhost";
+    $username = "pma";
+    $password = "";
+    $dbname = "test";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    // Fetch book information
     $sql = "SELECT * FROM book WHERE BookID = '$bookID'";
-    $result = mysqli_query($conn, $sql);
-    return mysqli_fetch_assoc($result);
+    $result = $conn->query($sql);
+
+    $bookInfo = [];
+    if ($result->num_rows > 0) {
+        $bookInfo = $result->fetch_assoc();
+    }
+
+    // Close connection
+    $conn->close();
+
+    return $bookInfo;
 }
