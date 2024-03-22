@@ -1,5 +1,4 @@
 <?php
-/** @psalm-suppress all */
 
 /**
  * littlereads-login.php
@@ -14,6 +13,9 @@ $servername = "localhost"; // Server name
 $username = "pma"; // Database username
 $password = ""; // Database password
 $dbname = "test"; // Database name
+
+// Start the session
+session_start();
 
 // Create connection to database
 $conn = new mysqli($servername, $username, $password, $dbname);

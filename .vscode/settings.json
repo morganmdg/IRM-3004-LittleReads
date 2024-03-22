@@ -1,0 +1,6 @@
+{
+    "sqlfluff.dialect": "postgres",
+    "[linting:rules]": {
+        "dialect": "postgres"
+    }
+}
