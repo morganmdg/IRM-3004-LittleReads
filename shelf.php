@@ -13,7 +13,7 @@
  */
 
 // Function to fetch current user's shelved books
-function fetchUserShelvedBooks($userID)
+function fetchUserShelvedBooks(string $userID): array
 {
     // Database connection
     $servername = "localhost";
@@ -47,7 +47,7 @@ function fetchUserShelvedBooks($userID)
 }
 
 // Function to fetch book information from the "book" table based on book ID
-function fetchBookInfo($bookID)
+function fetchBookInfo(string $bookID): array
 {
     // Database connection
     $servername = "localhost";
@@ -79,7 +79,7 @@ function fetchBookInfo($bookID)
 }
 
 // Function to generate shelf HTML
-function generateShelfHTML($userID) 
+function generateShelfHTML(string $userID): string 
 {
     $html = '';
     if ($userID) {
