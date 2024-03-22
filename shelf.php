@@ -1,18 +1,14 @@
 <?php
 
-// Suppress the warning for this entire file
-// phpcs:disable
-
 /**
  * shelf.php
- * This file handles user sign-up and sign-in functionality.
+ * This file handles the books showing up on the profile page
  *
  * @author Jacob Abraham
  * @version 1.0
  * @date March 22, 2024
  */
 
-// phpsalm-silence UndefinedClass
 // Function to fetch current user's shelved books
 function fetchUserShelvedBooks(string $userID): array
 {
@@ -22,7 +18,6 @@ function fetchUserShelvedBooks(string $userID): array
     $password = "";
     $dbname = "test";
 
-    // phpsalm-silence UndefinedClass
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -58,7 +53,6 @@ function fetchBookInfo(string $bookID): array
     $password = "";
     $dbname = "test";
 
-    // phpsalm-silence UndefinedClass
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -82,51 +76,29 @@ function fetchBookInfo(string $bookID): array
     return $bookInfo;
 }
 
-// Function to generate shelf HTML!!
-function generateShelfHTML(string $userID): string 
-{
-    $html = '';
-    if ($userID) {
-        // Output opening div tag for shelf-id
-        $html .= "<div class='shelfbooks' id='shelf-id'>";
+// Fetch current user's shelved books
+$shelvedBooks = fetchUserShelvedBooks($_SESSION['user_id']);
 
-        // Fetch current user's shelved books
-        $shelvedBooks = fetchUserShelvedBooks($userID);
+// Check if there are shelved books for the user
+if (!empty($shelvedBooks)) {
+    // Display each unique shelved book
+    foreach ($shelvedBooks as $bookID) {
+        // Fetch book information from the "book" table based on the book ID
+        $bookInfo = fetchBookInfo($bookID);
 
-        // Check if there are shelved books for the user
-        if (!empty($shelvedBooks)) {
-            // Display each unique shelved book
-            foreach ($shelvedBooks as $bookID) {
-                // Fetch book information from the "book" table based on the book ID
-                $bookInfo = fetchBookInfo($bookID);
+        // Display book details
+        echo '<div class="book">';
+        echo '<img src="' . $bookInfo['ImageLink'] . '" alt="' . $bookInfo['Title'] . '">';
 
-                // Display book details
-                $html .= '<div class="book">';
-                $html .= '<img src="' . $bookInfo['ImageLink'] . '" alt="' . $bookInfo['Title'] . '">';
+        // Add a remove button for each book
+        echo '<form action="remove_book.php" method="post">';
+        echo '<input type="hidden" name="bookID" value="' . $bookID . '">';
+        echo '<button type="submit" class="remove-btn">Remove</button>';
+        echo '</form>';
 
-                // Add a remove button for each book
-                $html .= '<form action="remove_book.php" method="post">';
-                $html .= '<input type="hidden" name="bookID" value="' . $bookID . '">';
-                $html .= '<button type="submit" class="remove-btn">Remove</button>';
-                $html .= '</form>';
-
-                $html .= '</div>';
-            }
-        } else {
-            // No books shelved for the user
-            $html .= '<p>No books shelved yet.</p>';
-        }
-
-        // Output closing div tag for shelf-id
-        $html .= "</div>";
-    } else {
-        // Session user_id is not set, handle accordingly
-        $html = "User ID not set in session.";
+        echo '</div>';
     }
-
-    return $html;
+} else {
+    // No books shelved for the user
+    echo '<p>No books shelved yet.</p>';
 }
-
-// Output the generated shelf HTML
-echo generateShelfHTML($_SESSION['user_id']);
-
