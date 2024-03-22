@@ -43,13 +43,15 @@
 </nav>
 </div>
 </header>
+
 <div class="explore-scrollbar">
+<!--
 <div class="explore-search">
 <input type="text" class="explore-search-style" placeholder="Search the explore page...">
 <button class="explore-search-btn">
     <i class="fas fa-search"></i>
 </button>
-</div>
+</div>-->
 <script>
 	function dropdownFunction() {
 		document.getElementById ("explore-filter-dropdown").classList.toggle("show-filter-dropdown-options");
@@ -84,7 +86,7 @@
 <script>
     // When the page is fully loaded
     $(document).ready(function(){
-        // Fetch and insert books from search.php into booksContainer
+        // Fetch and insert books from search.php into books-container
         $('#books-contained').load('search.php');
         
         // Fetch and insert username into My Shelf button
@@ -93,10 +95,11 @@
         });
     });
 
-    // Function to navigate to description page
     function goToDescription(isbn) {
-        window.location.href = 'littlereads-description.html?isbn=' + isbn;
+        var url = 'http://localhost/myPHP/IRM-3004-LittleReads/littlereads-desciption.html?isbn=' + isbn;
+        window.location.href = url;
     }
+
 
     function filterBooks(genre1, genre2, genre3) {
     $.ajax({
