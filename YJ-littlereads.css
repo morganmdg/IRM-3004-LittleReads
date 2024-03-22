@@ -1,6 +1,7 @@
 /* Explore page CSS */
 
-/* Style for search bar */
+
+/* Style for search bar 
 .explore-search-style {
   margin: 15px 20px 100px 530px;
   width: 35%;
@@ -14,13 +15,13 @@
   color: #333;
 }
 
-/* Cursor change on hover for search bar */
+Cursor change on hover for search bar
 .explore-search-style:hover {
   cursor: auto;
   background-color: #fbd055;
 }
 
-/* Search button */
+Search button 
 .explore-search-btn {
   background-color: #fbd055;
   border-radius: 7px;
@@ -34,14 +35,15 @@
   width: 4%;
   color: #333;
 }
+*/
 
 /* Style for filter button */
 .explore-filter-btn {
-  background-color: #fff;
+  background-color: #fbd055;
   padding: 10px;
-  border: 2px solid grey;
+  border: 2px solid #fbd055;
   color: #333;
-  border-radius: 7px;
+  border-radius: 15px;
   margin: 15px 50px 100px;
   width: 210%;
   float: right;
@@ -61,14 +63,15 @@
 
 /* Cursor change on hover for filter button */
 .explore-filter-btn:hover {
-  background-color: #fbd055;
+  background-color: #f9b200;
+  border: 2px solid #f9b200;
 }
 
 /* Position of filter on page */
 .explore-filter {
   position: relative;
   float: right;
-  top: -61px;
+  top: 10px;
   left: -35px;
 }
 
@@ -80,7 +83,9 @@
   background-color: #fbd055;
   color: #333;
   border: none;
-  padding: 35px;
+  padding-right: 50px;
+  padding-left: 20px;
+  padding-bottom: 20px;
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
   cursor: pointer;
@@ -92,14 +97,17 @@
 /* Style for filter dropdown options */
 .explore-filter-dropdown-style a {
   color: #333;
-  padding: 10px;
+  padding: 15px;
   text-decoration: none;
   display: block;
+  border-radius: 15px;
+  width: fit-content;
+  block-size: fit-content;
 }
 
 /* Colour changes when hovering over filter dropdown options */
 .explore-filter-dropdown-style a:hover {
-  background-color: #fff;
+  background-color: #f9b200;
 }
 
 /* Display filter dropdown options after clicking button */
@@ -110,12 +118,14 @@
 
 /* Formatting the books container */
 .books-container {
-  margin-top: -200px;
+  margin-top: -60px;
   margin-bottom: 30px;
+  margin-right: 10px;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   justify-content: center;
+
 }
 
 /* Formatting the individual books */
@@ -123,17 +133,13 @@
   font-family: "Nunito Sans", sans-serif;
   color: #38b6ff;
   font-weight: 800;
-  font-size: 200px;
-  padding: 50px;
-  margin-right: 200px;
-  width: 15%;
+  font-size: 20px;
+  width: 30%;
   justify-content: center;
-}
-
-.image {
-  width: 600px;
-  height: 500px;
-  overflow: hidden;
+  white-space: nowrap;
+  margin-bottom: 40px;
+  margin-right: 310px;
+  padding-left: 230px;
 }
 
 /* Description page CSS */
