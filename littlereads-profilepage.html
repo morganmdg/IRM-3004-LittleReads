@@ -65,5 +65,12 @@
 <img src="book10.jpg" alt="Book 10">
 </div>
 </div>
+<script>
+    // When the page is fully loaded!
+    $(document).ready(function(){
+        // Fetch and insert books from shelf.php into shelf-id div
+        $('#shelf-id').load('shelf.php');
+    });
+</script>
 </body>
 </html>
