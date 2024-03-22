@@ -9,6 +9,9 @@
  * @date March 22, 2024
  */
 
+// Start PHP session if not already started
+session_start();
+
 // Function to fetch current user's shelved books
 function fetchUserShelvedBooks(string $userID): array
 {
@@ -43,7 +46,39 @@ function fetchUserShelvedBooks(string $userID): array
     return $shelvedBooks;
 }
 
-// phpsalm-silence UndefinedClass
+// Check if "user_id" is set and not null
+if (isset($_SESSION['user_id']) && $_SESSION['user_id'] !== null) {
+    // Fetch current user's shelved books
+    $shelvedBooks = fetchUserShelvedBooks($_SESSION['user_id']);
+
+    // Check if there are shelved books for the user
+    if (!empty($shelvedBooks)) {
+        // Display each unique shelved book
+        foreach ($shelvedBooks as $bookID) {
+            // Fetch book information from the "book" table based on the book ID
+            $bookInfo = fetchBookInfo($bookID);
+
+            // Display book details
+            echo '<div class="book">';
+            echo '<img src="' . $bookInfo['ImageLink'] . '" alt="' . $bookInfo['Title'] . '">';
+
+            // Add a remove button for each book
+            echo '<form action="remove_book.php" method="post">';
+            echo '<input type="hidden" name="bookID" value="' . $bookID . '">';
+            echo '<button type="submit" class="remove-btn">Remove</button>';
+            echo '</form>';
+
+            echo '</div>';
+        }
+    } else {
+        // No books shelved for the user
+        echo '<p>No books shelved yet.</p>';
+    }
+} else {
+    // Handle case where "user_id" is not set or null
+    echo "User ID is not set in the session.";
+}
+
 // Function to fetch book information from the "book" table based on book ID
 function fetchBookInfo(string $bookID): array
 {
@@ -74,31 +109,4 @@ function fetchBookInfo(string $bookID): array
     $conn->close();
 
     return $bookInfo;
-}
-
-// Fetch current user's shelved books
-$shelvedBooks = fetchUserShelvedBooks($_SESSION['user_id']);
-
-// Check if there are shelved books for the user
-if (!empty($shelvedBooks)) {
-    // Display each unique shelved book
-    foreach ($shelvedBooks as $bookID) {
-        // Fetch book information from the "book" table based on the book ID
-        $bookInfo = fetchBookInfo($bookID);
-
-        // Display book details
-        echo '<div class="book">';
-        echo '<img src="' . $bookInfo['ImageLink'] . '" alt="' . $bookInfo['Title'] . '">';
-
-        // Add a remove button for each book
-        echo '<form action="remove_book.php" method="post">';
-        echo '<input type="hidden" name="bookID" value="' . $bookID . '">';
-        echo '<button type="submit" class="remove-btn">Remove</button>';
-        echo '</form>';
-
-        echo '</div>';
-    }
-} else {
-    // No books shelved for the user
-    echo '<p>No books shelved yet.</p>';
 }

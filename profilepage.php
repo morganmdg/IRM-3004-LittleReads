@@ -1,6 +1,15 @@
 <?php
 // Start PHP session if not already started
 session_start();
+
+// Check if "user_id" is set and not null
+if (isset($_SESSION['user_id']) && $_SESSION['user_id'] !== null) {
+    // Include shelf.php only if "user_id" is set
+    include 'shelf.php';
+} else {
+    // Handle case where "user_id" is not set or null
+    echo "User ID is not set in the session.";
+}
 ?>
 
 <!DOCTYPE html>
@@ -58,7 +67,7 @@ session_start();
 </div>
 <!--myshelf container-->
 <div class="shelfbooks">
-    <?php include 'shelf.php'; ?>
+    <!-- Shelf content will be included here -->
 </div>
 </div>
 </body>
