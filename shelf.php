@@ -9,6 +9,9 @@
  * @date March 22, 2024
  */
 
+// Start the session
+session_start();
+
 // Function to fetch current user's shelved books
 function fetchUserShelvedBooks($userID)
 {
@@ -75,9 +78,6 @@ function fetchBookInfo($bookID)
     return $bookInfo;
 }
 
-// Start the session
-session_start();
-
 // Check if user_id is set in the session
 if (isset($_SESSION['user_id'])) {
     // Output opening div tag for shelf-id
@@ -116,4 +116,3 @@ if (isset($_SESSION['user_id'])) {
     // Session user_id is not set, handle accordingly
     echo "User ID not set in session.";
 }
-

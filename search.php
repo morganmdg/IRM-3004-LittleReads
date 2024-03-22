@@ -9,82 +9,80 @@
  * @date March 22, 2024
  */
 
-// Database connection
-$servername = "localhost";
-$username = "pma";
-$password = "";
-$dbname = "test";
+// Function to fetch current user's shelved books
+/**
+ * @param int|string $userID
+ * @return array<int, string>
+ */
+function fetchUserShelvedBooks($userID)
+{
+    // Database connection
+    $servername = "localhost";
+    $username = "pma";
+    $password = "";
+    $dbname = "test";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+    // Create connection
+    /** @psalm-suppress UndefinedClass */
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-// Construct the SQL query based on the selected genres
-$sql = "SELECT Title, Genres, ImageLink, ISBN FROM book WHERE 1=1";
-
-// Handle potential casts properly
-$genre1 = $_GET['genre1'] ?? '';
-$genre2 = $_GET['genre2'] ?? '';
-$genre3 = $_GET['genre3'] ?? '';
-
-if (!empty($genre1)) {
-    $sql .= " AND Genres LIKE '%" . $conn->real_escape_string($genre1) . "%'";
-}
-
-if (!empty($genre2)) {
-    $sql .= " AND Genres LIKE '%" . $conn->real_escape_string($genre2) . "%'";
-}
-
-if (!empty($genre3)) {
-    $sql .= " AND Genres LIKE '%" . $conn->real_escape_string($genre3) . "%'";
-}
-
-// Output opening div tag for books-contained
-echo "<div class='books-container' id='books-contained'>\n";
-
-$result = $conn->query($sql);
-
-// Check if any books were found
-if ($result->num_rows > 0) {
-    // Output data of each row
-    while ($row = $result->fetch_assoc()) {
-        echo "<div class='book'>";
-        echo "<h2>" . $row["Title"] . "</h2>";
-        echo "<p>Genres: " . $row["Genres"] . "</p>";
-        echo "<div class='image'>";
-        echo "<img src='" . $row["ImageLink"] . "' alt='" .
-        $row["Title"] . "' onclick='goToDescription(\"" . $row["ISBN"] . "\")'>";
-        echo "</div>";
-        echo "</div>";
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
     }
-} else {
-    // If no filters are selected, fetch all books
-    $sql = "SELECT Title, Genres, ImageLink, ISBN FROM book";
+
+    // Fetch shelved books
+    $sql = "SELECT Shelved FROM myshelf WHERE UserID = '$userID'";
     $result = $conn->query($sql);
 
-    // Check if any books were found
+    $shelvedBooks = [];
     if ($result->num_rows > 0) {
-        // Output data of each row
-        while ($row = $result->fetch_assoc()) {
-            echo "<div class='book'>";
-            echo "<h2>" . $row["Title"] . "</h2>";
-            echo "<p>Genres: " . $row["Genres"] . "</p>";
-            echo "<img src='" . $row["ImageLink"] . "' alt='" .
-            $row["Title"] . "' onclick='goToDescription(\"" . $row["ISBN"] . "\")'>";
-            echo "</div>";
-        }
-    } else {
-        echo "No books found.";
+        $row = $result->fetch_assoc();
+        $shelvedBooks = explode('-', $row['Shelved']);
+        $shelvedBooks = array_unique($shelvedBooks); // Remove duplicates
     }
+
+    // Close connection
+    $conn->close();
+
+    return $shelvedBooks;
 }
 
-// Output closing div tag for books-contained
-echo "</div>\n";
+// Function to fetch book information from the "book" table based on book ID
+/**
+ * @param int|string $bookID
+ * @return array<string,mixed>
+ */
+function fetchBookInfo($bookID)
+{
+    // Database connection
+    $servername = "localhost";
+    $username = "pma";
+    $password = "";
+    $dbname = "test";
 
-// Close connection
-$conn->close();
+    // Create connection
+    /** @psalm-suppress UndefinedClass */
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    // Fetch book information
+    $sql = "SELECT * FROM book WHERE BookID = '$bookID'";
+    $result = $conn->query($sql);
+
+    $bookInfo = [];
+    if ($result->num_rows > 0) {
+        $bookInfo = $result->fetch_assoc();
+    }
+
+    // Close connection
+    $conn->close();
+
+    return $bookInfo;
+}
+
 ?>
