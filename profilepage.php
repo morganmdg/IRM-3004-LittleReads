@@ -1,3 +1,8 @@
+<?php
+// Start PHP session if not already started
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +22,7 @@
 <h1><img src="images/BookIcon-Icons8.png" class="book-icon" alt="LittleReads Book Logo"> LittleReads</h1>
 </div>
 <div class="midnav">
-<a href="littlereads-profilepage.html" class="shelf-btn">My Shelf</a>
+<a href="littlereads-profilepage.php" class="shelf-btn">My Shelf</a>
 </div>
 <div class="rightnav">
 <nav>
@@ -53,24 +58,8 @@
 </div>
 <!--myshelf container-->
 <div class="shelfbooks">
-<img src="book1.jpg" alt="Book 1">
-<img src="book2.jpg" alt="Book 2">
-<img src="book3.jpg" alt="Book 3">
-<img src="book4.jpg" alt="Book 4">
-<img src="book5.jpg" alt="Book 5">
-<img src="book6.jpg" alt="Book 6">
-<img src="book7.jpg" alt="Book 7">
-<img src="book8.jpg" alt="Book 8">
-<img src="book9.jpg" alt="Book 9">
-<img src="book10.jpg" alt="Book 10">
+    <?php include 'shelf.php'; ?>
 </div>
 </div>
-<script>
-    // When the page is fully loaded!
-    $(document).ready(function(){
-        // Fetch and insert books from shelf.php into shelf-id div
-        $('#shelf-id').load('shelf.php');
-    });
-</script>
 </body>
 </html>
