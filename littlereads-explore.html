@@ -22,7 +22,7 @@
 <h1><img src="images/BookIcon-Icons8.png" class="book-icon" alt="LittleReads Book Logo"> LittleReads</h1>
 </div>
 <div class="midnav">
-    <button class="shelf-btn" id="my-shelf-btn">My Shelf</button>
+<a href="littlereads-profilepage.html" class="shelf-btn">My Shelf</a>
 </div>
 <div class="rightnav">
 <nav>
@@ -86,7 +86,7 @@
 <script>
     // When the page is fully loaded
     $(document).ready(function(){
-        // Fetch and insert books from search.php into booksContainer
+        // Fetch and insert books from search.php into books-container
         $('#books-contained').load('search.php');
         
         // Fetch and insert username into My Shelf button
@@ -95,10 +95,11 @@
         });
     });
 
-    // Function to navigate to description page
     function goToDescription(isbn) {
-        window.location.href = 'littlereads-description.html?isbn=' + isbn;
+        var url = 'http://localhost/myPHP/IRM-3004-LittleReads/littlereads-desciption.html?isbn=' + isbn;
+        window.location.href = url;
     }
+
 
     function filterBooks(genre1, genre2, genre3) {
     $.ajax({
