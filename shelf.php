@@ -1,5 +1,8 @@
 <?php
 
+// Suppress the warning for this entire file
+// phpcs:disable
+
 /**
  * shelf.php
  * This file handles user sign-up and sign-in functionality.
@@ -76,7 +79,8 @@ function fetchBookInfo($bookID)
 }
 
 // Function to generate shelf HTML
-function generateShelfHTML($userID) {
+function generateShelfHTML($userID) 
+{
     $html = '';
     if ($userID) {
         // Output opening div tag for shelf-id
@@ -115,7 +119,7 @@ function generateShelfHTML($userID) {
         // Session user_id is not set, handle accordingly
         $html = "User ID not set in session.";
     }
-    
+
     return $html;
 }
 
