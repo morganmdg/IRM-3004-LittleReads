@@ -9,80 +9,79 @@
  * @date March 22, 2024
  */
 
-// Function to fetch current user's shelved books
-/**
- * @param int|string $userID
- * @return array<int, string>
- */
-function fetchUserShelvedBooks($userID)
-{
-    // Database connection
-    $servername = "localhost";
-    $username = "pma";
-    $password = "";
-    $dbname = "test";
+// Database connection
+$servername = "localhost";
+$username = "pma";
+$password = "";
+$dbname = "test";
 
-    // Create connection
-    /** @psalm-suppress UndefinedClass */
-    $conn = new mysqli($servername, $username, $password, $dbname);
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    // Fetch shelved books
-    $sql = "SELECT Shelved FROM myshelf WHERE UserID = '$userID'";
-    $result = $conn->query($sql);
-
-    $shelvedBooks = [];
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $shelvedBooks = explode('-', $row['Shelved']);
-        $shelvedBooks = array_unique($shelvedBooks); // Remove duplicates
-    }
-
-    // Close connection
-    $conn->close();
-
-    return $shelvedBooks;
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 
-// Function to fetch book information from the "book" table based on book ID
-/**
- * @param int|string $bookID
- * @return array<string,mixed>
- */
-function fetchBookInfo($bookID)
-{
-    // Database connection
-    $servername = "localhost";
-    $username = "pma";
-    $password = "";
-    $dbname = "test";
+// Construct the SQL query based on the selected genres
+$sql = "SELECT Title, Genres, ImageLink, ISBN FROM book WHERE 1=1";
 
-    // Create connection
-    /** @psalm-suppress UndefinedClass */
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    // Fetch book information
-    $sql = "SELECT * FROM book WHERE BookID = '$bookID'";
-    $result = $conn->query($sql);
-
-    $bookInfo = [];
-    if ($result->num_rows > 0) {
-        $bookInfo = $result->fetch_assoc();
-    }
-
-    // Close connection
-    $conn->close();
-
-    return $bookInfo;
+if (isset($_GET['genre1']) && !empty($_GET['genre1'])) {
+    $genre1 = $_GET['genre1'];
+    $sql .= " AND Genres LIKE '%$genre1%'";
 }
 
-?>
+if (isset($_GET['genre2']) && !empty($_GET['genre2'])) {
+    $genre2 = $_GET['genre2'];
+    $sql .= " AND Genres LIKE '%$genre2%'";
+}
+
+if (isset($_GET['genre3']) && !empty($_GET['genre3'])) {
+    $genre3 = $_GET['genre3'];
+    $sql .= " AND Genres LIKE '%$genre3%'";
+}
+
+// Output opening div tag for books-contained
+echo "<div class='books-container' id='books-contained'>\n";
+
+$result = $conn->query($sql);
+
+// Check if any books were found
+if ($result->num_rows > 0) {
+    // Output data of each row
+    while ($row = $result->fetch_assoc()) {
+        echo "<div class='book'>";
+        echo "<h2>" . $row["Title"] . "</h2>";
+        echo "<p>Genres: " . $row["Genres"] . "</p>";
+        echo "<div class='image'>";
+        echo "<img src='" . $row["ImageLink"] . "' alt='" .
+        $row["Title"] . "' onclick='goToDescription(\"" . $row["ISBN"] . "\")'>";
+        echo "</div>";
+        echo "</div>";
+    }
+} else {
+    // If no filters are selected, fetch all books
+    $sql = "SELECT Title, Genres, ImageLink, ISBN FROM book";
+    $result = $conn->query($sql);
+
+    // Check if any books were found
+    if ($result->num_rows > 0) {
+        // Output data of each row
+        while ($row = $result->fetch_assoc()) {
+            echo "<div class='book'>";
+            echo "<h2>" . $row["Title"] . "</h2>";
+            echo "<p>Genres: " . $row["Genres"] . "</p>";
+            echo "<img src='" . $row["ImageLink"] . "' alt='" .
+            $row["Title"] . "' onclick='goToDescription(\"" . $row["ISBN"] . "\")'>";
+            echo "</div>";
+        }
+    } else {
+        echo "No books found.";
+    }
+}
+
+// Output closing div tag for books-contained
+echo "</div>\n";
+
+// Close connection
+$conn->close();

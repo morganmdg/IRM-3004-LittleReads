@@ -9,9 +9,6 @@
  * @date March 22, 2024
  */
 
-// Start the session
-session_start();
-
 // Function to fetch current user's shelved books
 function fetchUserShelvedBooks($userID)
 {
