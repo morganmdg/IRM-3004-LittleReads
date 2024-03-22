@@ -1,9 +1,9 @@
 <?php
-/** @psalm-suppress all */
 
 /**
  * littlereads-shelf.php
  * This file handles user sign-up and sign-in functionality.
+ * 
  * @author Jacob Abraham
  * @version 1.0
  * @date March 21, 2024
