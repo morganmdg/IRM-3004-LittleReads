@@ -1,4 +1,5 @@
 <?php
+
 /** @psalm-suppress all */
 
 /**

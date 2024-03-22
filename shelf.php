@@ -75,41 +75,48 @@ function fetchBookInfo($bookID)
     return $bookInfo;
 }
 
-// Check if user_id is set in the session
-if (isset($_SESSION['user_id'])) {
-    // Output opening div tag for shelf-id
-    echo "<div class='shelfbooks' id='shelf-id'>";
+// Function to generate shelf HTML
+function generateShelfHTML() {
+    if (isset($_SESSION['user_id'])) {
+        // Output opening div tag for shelf-id
+        $html = "<div class='shelfbooks' id='shelf-id'>";
 
-    // Fetch current user's shelved books
-    $shelvedBooks = fetchUserShelvedBooks($_SESSION['user_id']);
+        // Fetch current user's shelved books
+        $shelvedBooks = fetchUserShelvedBooks($_SESSION['user_id']);
 
-    // Check if there are shelved books for the user
-    if (!empty($shelvedBooks)) {
-        // Display each unique shelved book
-        foreach ($shelvedBooks as $bookID) {
-            // Fetch book information from the "book" table based on the book ID
-            $bookInfo = fetchBookInfo($bookID);
+        // Check if there are shelved books for the user
+        if (!empty($shelvedBooks)) {
+            // Display each unique shelved book
+            foreach ($shelvedBooks as $bookID) {
+                // Fetch book information from the "book" table based on the book ID
+                $bookInfo = fetchBookInfo($bookID);
 
-            // Display book details
-            echo '<div class="book">';
-            echo '<img src="' . $bookInfo['ImageLink'] . '" alt="' . $bookInfo['Title'] . '">';
+                // Display book details
+                $html .= '<div class="book">';
+                $html .= '<img src="' . $bookInfo['ImageLink'] . '" alt="' . $bookInfo['Title'] . '">';
 
-            // Add a remove button for each book
-            echo '<form action="remove_book.php" method="post">';
-            echo '<input type="hidden" name="bookID" value="' . $bookID . '">';
-            echo '<button type="submit" class="remove-btn">Remove</button>';
-            echo '</form>';
+                // Add a remove button for each book
+                $html .= '<form action="remove_book.php" method="post">';
+                $html .= '<input type="hidden" name="bookID" value="' . $bookID . '">';
+                $html .= '<button type="submit" class="remove-btn">Remove</button>';
+                $html .= '</form>';
 
-            echo '</div>';
+                $html .= '</div>';
+            }
+        } else {
+            // No books shelved for the user
+            $html .= '<p>No books shelved yet.</p>';
         }
-    } else {
-        // No books shelved for the user
-        echo '<p>No books shelved yet.</p>';
-    }
 
-    // Output closing div tag for shelf-id
-    echo "</div>";
-} else {
-    // Session user_id is not set, handle accordingly
-    echo "User ID not set in session.";
+        // Output closing div tag for shelf-id
+        $html .= "</div>";
+
+        return $html;
+    } else {
+        // Session user_id is not set, handle accordingly
+        return "User ID not set in session.";
+    }
 }
+
+// Output the generated shelf HTML
+echo generateShelfHTML();
