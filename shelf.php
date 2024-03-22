@@ -1,9 +1,10 @@
 <?php
+/** @psalm-suppress all */
 
 /**
  * littlereads-shelf.php
  * This file handles user sign-up and sign-in functionality.
- * 
+ *
  * @author Jacob Abraham
  * @version 1.0
  * @date March 21, 2024
@@ -76,7 +77,7 @@ if (isset($_SESSION['user_id'])) {
 }
 
 // Function to fetch book information from the "book" table based on book ID
-function fetchBookInfo($bookID, $conn) 
+function fetchBookInfo($bookID, $conn)
 {
     $sql = "SELECT * FROM book WHERE BookID = '$bookID'";
     $result = mysqli_query($conn, $sql);

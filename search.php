@@ -3,7 +3,7 @@
 /**
  * littlereads-search.php
  * This file handles user sign-up and sign-in functionality.
- * 
+ *
  * @author Dominic Murphy
  * @version 1.0
  * @date March 21, 2024
