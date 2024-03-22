@@ -73,4 +73,5 @@ echo "</div>";
 
 // Close connection
 $conn->close();
-?>
+
+// Function to navigate to description page

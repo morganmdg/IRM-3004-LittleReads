@@ -1,44 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--head element with title, stylesheet, and imported google fonts-->
 <head>
 <meta charset="utf-8">
-<title>LittleReads - Desciption</title>
+<title>LittleReads - Description</title>
 <link rel="stylesheet" href="YJ-littlereads.css">
 <link rel="stylesheet" href="littlereads-style.css">
-<!--imported google fonts-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Protest+Strike&display=swap" rel="stylesheet">
-<!--Adding icons stylesheet-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<!--Yasmeen adding scrollbar-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <body>
-<!--toolbar that allows navigation across pages-->
 <header class="toolbar">
 <div class="leftnav">
 <h1><img src="images/BookIcon-Icons8.png" class="book-icon" alt="LittleReads Book Logo"> LittleReads</h1>
 </div>
-<!--my shelf button allows users to access profile page-->
 <div class="midnav">
 <a href="littlereads-profilepage.html" class="shelf-btn">My Shelf</a>
 </div>
 <div class="rightnav">
 <nav>
 <ul>
-<!--link-->
 <li><a href="#">Home</a></li>
 <li><a href="#">Explore</a></li>
 <li><a href="#">Contact</a></li>
 <li class="dropdown">
 <button class="dropdown-btn"><img src="images/MenuIcon-Icons8.png" class="menu-icon" alt="Drop down menu icon"></button>
 <div class="dropdown-menu">
-<!--link-->
 <a href="#">About</a> 
 <a href="#">Challenges</a>
 <a href="#">Resources</a>
@@ -48,16 +41,24 @@
 </nav>
 </div>
 </header>
-<div class="description-display-block">
-<!--Placeholder for book information
-<h3>Title: </h3>
-<h3>Author: </h3>
-<h3>Genres: </h3>
-<h3>ISBN: </h3>
-<h3>Language: </h3>-->
+<div class="description-display-block" id="display-block">
+<!-- Placeholder for book information -->
+
+<!-- Buttons for Share, Reviews, and Add to Shelf -->
 <button class="desciption-share-btn">Share&nbsp;&nbsp;&nbsp;<i class="fa fa-share-square"></i></button>
 <button class="desciption-reviews-btn">Reviews&nbsp;&nbsp;&nbsp;<i class="fa fa-star"></i></button>
 <button class="desciption-shelf-btn">Add to shelf&nbsp;&nbsp;&nbsp;<i class="fa fa-plus-square"></i></button>
 </div>
+
+<script>
+    // When the page is fully loaded
+    $(document).ready(function(){
+        // Fetch and insert books from show-description.php into books-container
+        $('#display-block').load('show-description.php');
+        
+    });
+
+</script>
+
 </body>
 </html>
