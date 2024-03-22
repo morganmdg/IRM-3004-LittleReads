@@ -76,13 +76,14 @@ function fetchBookInfo($bookID)
 }
 
 // Function to generate shelf HTML
-function generateShelfHTML() {
-    if (isset($_SESSION['user_id'])) {
+function generateShelfHTML($userID) {
+    $html = '';
+    if ($userID) {
         // Output opening div tag for shelf-id
-        $html = "<div class='shelfbooks' id='shelf-id'>";
+        $html .= "<div class='shelfbooks' id='shelf-id'>";
 
         // Fetch current user's shelved books
-        $shelvedBooks = fetchUserShelvedBooks($_SESSION['user_id']);
+        $shelvedBooks = fetchUserShelvedBooks($userID);
 
         // Check if there are shelved books for the user
         if (!empty($shelvedBooks)) {
@@ -110,13 +111,14 @@ function generateShelfHTML() {
 
         // Output closing div tag for shelf-id
         $html .= "</div>";
-
-        return $html;
     } else {
         // Session user_id is not set, handle accordingly
-        return "User ID not set in session.";
+        $html = "User ID not set in session.";
     }
+    
+    return $html;
 }
 
 // Output the generated shelf HTML
-echo generateShelfHTML();
+echo generateShelfHTML($_SESSION['user_id']);
+

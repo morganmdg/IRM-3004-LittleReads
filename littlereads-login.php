@@ -1,7 +1,5 @@
 <?php
 
-/** @psalm-suppress all */
-
 /**
  * littlereads-login.php
  * This file handles user sign-up and sign-in functionality.
