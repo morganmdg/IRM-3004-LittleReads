@@ -118,14 +118,11 @@ Search button
 
 /* Formatting the books container */
 .books-container {
-  margin-top: -60px;
-  margin-bottom: 30px;
-  margin-right: 10px;
+  margin-top: 50px; 
+  margin-left: 50px;
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
-  justify-content: center;
-
+  justify-content: space-between; 
 }
 
 /* Formatting the individual books */
@@ -133,13 +130,13 @@ Search button
   font-family: "Nunito Sans", sans-serif;
   color: #38b6ff;
   font-weight: 800;
-  font-size: 20px;
-  width: 30%;
-  justify-content: center;
-  white-space: nowrap;
-  margin-bottom: 40px;
-  margin-right: 310px;
-  padding-left: 230px;
+  font-size: 16px; 
+  width: calc(50% - 20px); 
+  margin-bottom: 20px; 
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f9f9f9; 
+  border-radius: 10px;
 }
 
 /* Description page CSS */
