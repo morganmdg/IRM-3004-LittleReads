@@ -1,7 +1,7 @@
 <?php
 
 /**
- * littlereads-search.php
+ * search.php
  * This file handles user sign-up and sign-in functionality.
  *
  * @author Dominic Murphy
