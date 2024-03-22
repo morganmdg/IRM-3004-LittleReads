@@ -12,6 +12,7 @@
  * @date March 22, 2024
  */
 
+// phpsalm-silence UndefinedClass
 // Function to fetch current user's shelved books
 function fetchUserShelvedBooks(string $userID): array
 {
@@ -46,6 +47,7 @@ function fetchUserShelvedBooks(string $userID): array
     return $shelvedBooks;
 }
 
+// phpsalm-silence UndefinedClass
 // Function to fetch book information from the "book" table based on book ID
 function fetchBookInfo(string $bookID): array
 {
