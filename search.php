@@ -26,19 +26,21 @@ if ($conn->connect_error) {
 // Construct the SQL query based on the selected genres
 $sql = "SELECT Title, Genres, ImageLink, ISBN FROM book WHERE 1=1";
 
-if (isset($_GET['genre1']) && !empty($_GET['genre1'])) {
-    $genre1 = $_GET['genre1'];
-    $sql .= " AND Genres LIKE '%$genre1%'";
+// Handle potential casts properly
+$genre1 = $_GET['genre1'] ?? '';
+$genre2 = $_GET['genre2'] ?? '';
+$genre3 = $_GET['genre3'] ?? '';
+
+if (!empty($genre1)) {
+    $sql .= " AND Genres LIKE '%" . $conn->real_escape_string($genre1) . "%'";
 }
 
-if (isset($_GET['genre2']) && !empty($_GET['genre2'])) {
-    $genre2 = $_GET['genre2'];
-    $sql .= " AND Genres LIKE '%$genre2%'";
+if (!empty($genre2)) {
+    $sql .= " AND Genres LIKE '%" . $conn->real_escape_string($genre2) . "%'";
 }
 
-if (isset($_GET['genre3']) && !empty($_GET['genre3'])) {
-    $genre3 = $_GET['genre3'];
-    $sql .= " AND Genres LIKE '%$genre3%'";
+if (!empty($genre3)) {
+    $sql .= " AND Genres LIKE '%" . $conn->real_escape_string($genre3) . "%'";
 }
 
 // Output opening div tag for books-contained
@@ -85,3 +87,4 @@ echo "</div>\n";
 
 // Close connection
 $conn->close();
+?>
