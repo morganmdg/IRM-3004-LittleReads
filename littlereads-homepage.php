@@ -82,6 +82,12 @@ can come together to discover new stories and share their love for reading.</h2>
     </div>
 </div>
 
+<!--images-->
+ <img src="images/BeeIcon.png" class="bee-image" alt="Bee" />
+ <img src="images/flower.png" class="flower-image" alt="Flower one">
+ <img src="images/flower-two.png" class="flower-image two" alt="Flower two">
+ <img src="images/flower-small.png" class="flower-image small" alt="Flower three">
+
 <div id="messages">
     <!-- PHP messages will be displayed here -->
 </div>
