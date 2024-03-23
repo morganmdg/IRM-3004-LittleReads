@@ -26,6 +26,7 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_id'] !== null) {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Protest+Strike&display=swap" rel="stylesheet">
 </head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <header class="toolbar">
 <div class="leftnav">
 <h1><img src="images/BookIcon-Icons8.png" class="book-icon" alt="LittleReads Book Logo"> LittleReads</h1>
@@ -67,9 +68,18 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_id'] !== null) {
 </div>
 </div>
 <!--myshelf container-->
-<div class="shelfbooks">
+<div class="shelfbooks" id= "shelfid">
     <!-- Shelf content will be included here -->
 </div>
+
+<script>
+    // When the page is fully loaded
+    $(document).ready(function(){
+        // Fetch and insert books from shelf.php into shelfid
+        $('#shelfid').load('shelf.php');
+    });
+</script>
 </div>
 </body>
 </html>
+

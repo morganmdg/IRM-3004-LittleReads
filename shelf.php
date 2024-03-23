@@ -46,6 +46,9 @@ function fetchUserShelvedBooks(string $userID): array
     return $shelvedBooks;
 }
 
+// Output opening div tag for books-contained
+echo "<div class='shelfbooks' id='shelfid'>";
+
 // Check if "user_id" is set and not null
 if (isset($_SESSION['user_id']) && $_SESSION['user_id'] !== null) {
     // Fetch current user's shelved books
@@ -78,6 +81,9 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_id'] !== null) {
     // Handle case where "user_id" is not set or null
     echo "User ID is not set in the session.";
 }
+
+// Output closing div tag for books-contained
+echo "</div>";
 
 // Function to fetch book information from the "book" table based on book ID
 function fetchBookInfo(string $bookID): array
