@@ -145,14 +145,13 @@ Search button
 
 /* Grey box */
 .description-display-block {
-  background-color: #ddd;
+  background-color: #f9f9f9;
   margin-right: 300px;
   margin-left: 80px;
   margin-top: 50px;
   border-radius: 15px;
-  width: 1550px;
-  Height: 730px;
-  display: block;
+  width: 1200px;
+  Height: 755px;
 }
 
 /* margin: 50px 130px 10px; */
@@ -195,19 +194,18 @@ Review button
 
 /* Add to shelf button */
 .description-shelf-btn {
-  background-color: #0BDA51;
+  background-color: #50C878;
   border-radius: 15px;
   font-family: "Nunito Sans", sans-serif;
   color: #333;
   padding: 30px;
   border: none;
   width: 20%;
-  margin-bottom: 200px;
   font-weight: 700;
-  font-size: 20px;
-  align-self: flex-end;
+  font-size: 25px;
   cursor: pointer;
-  margin-left: 400px;
+  margin-left: 1360px;
+  margin-top: 350px;
   position: absolute;
 }
 
@@ -216,4 +214,6 @@ Review button
   color: #38b6ff;
   font-weight: 800;
   font-size: 20px;
+  padding-left: 100px;
+  padding-top: 10px;
 }
