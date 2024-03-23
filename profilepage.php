@@ -26,6 +26,7 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_id'] !== null) {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Protest+Strike&display=swap" rel="stylesheet">
 </head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <header class="toolbar">
 <div class="leftnav">
 <h1><img src="images/BookIcon-Icons8.png" class="book-icon" alt="LittleReads Book Logo"> LittleReads</h1>
@@ -60,16 +61,24 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_id'] !== null) {
 <img src="images/UserIcon-Colour-Icons8.png" alt="Profile Picture">
 </div>
 <div class="profile-info">
-<h2>Username</h2> <!--input username from database-->
-<p>Age: 7</p> <!--input age from database-->
-<p>Reading Level: Reading Wiz</p> <!--input reading level from database-->
-<p>Reading Goal: 5/10</p> <!--input reading goal from database-->
+
 </div>
 </div>
 <!--myshelf container-->
-<div class="shelfbooks">
+<div class="shelfbooks" id="shelf-id">
     <!-- Shelf content will be included here -->
 </div>
 </div>
+</body>
+</html>
+<script>
+    // When the page is fully loaded
+    $(document).ready(function(){
+        // Fetch and insert books from search.php into books-container
+        $('#shelf-id').load('shelf.php');
+        
+    });
+
+</script>
 </body>
 </html>
