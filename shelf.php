@@ -70,6 +70,7 @@ function fetchBookInfo(mysqli $conn, string $isbn): array
     return $bookInfo;
 }
 
+echo "<div class='shelfbooks' id='shelf-id'>";
 // Check if "user_id" is set and not null
 if (isset($_SESSION['user_id']) && $_SESSION['user_id'] !== null) {
     // Establish database connection
@@ -90,12 +91,6 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_id'] !== null) {
                 echo '<div class="book">';
                 echo '<img src="' . $bookInfo['ImageLink'] . '" alt="' . $bookInfo['Title'] . '">';
 
-                // Add a remove button for each book
-                echo '<form action="remove_book.php" method="post">';
-                echo '<input type="hidden" name="isbn" value="' . $isbn . '">';
-                echo '<button type="submit" class="remove-btn">Remove</button>';
-                echo '</form>';
-
                 echo '</div>';
             }
         }
@@ -103,6 +98,7 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_id'] !== null) {
         // No books shelved for the user
         echo '<p>No books shelved yet.</p>';
     }
+    echo "</div>";
 
     // Close connection
     $conn->close();
