@@ -51,9 +51,24 @@
     $(document).ready(function(){
         // Fetch and insert books from show-description.php into books-container
         $('#display-block').load('show-description.php');
-        
     });
-
+    
+    // Function to add book to shelf
+    function addToShelf() {
+        $.ajax({
+            url: 'show-description.php',
+            type: 'POST',
+            data: { add_to_shelf: true }, // Send flag to indicate adding to shelf
+            success: function(response) {
+                // Handle success response
+                $('#messages').html(response); // Display any messages from PHP
+            },
+            error: function(xhr, status, error) {
+                // Handle error
+                console.error(xhr.responseText);
+            }
+        });
+    }
 </script>
 
 </body>

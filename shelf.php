@@ -17,7 +17,7 @@ function fetchUserShelvedBooks(string $userID): array
 {
     // Database connection
     $servername = "localhost";
-    $username = "pma";
+    $username = "root";
     $password = "";
     $dbname = "test";
 
@@ -84,7 +84,7 @@ function fetchBookInfo(string $bookID): array
 {
     // Database connection
     $servername = "localhost";
-    $username = "pma";
+    $username = "root";
     $password = "";
     $dbname = "test";
 
