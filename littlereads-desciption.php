@@ -43,8 +43,11 @@
 </div>
 </header>
 <!-- Button for Add to Shelf -->
-<button class="description-shelf-btn">Add to shelf&nbsp;&nbsp;&nbsp;<i class="fa fa-plus-square"></i></button>
+<button class="description-shelf-btn" onclick="addToShelf()">Add to shelf&nbsp;&nbsp;&nbsp;<i class="fa fa-plus-square"></i></button>
 <div class="description-display-block" id="display-block">
+</div>
+<div id="messages">
+    <!-- PHP messages will be displayed here -->
 </div>
 <script>
     // When the page is fully loaded
