@@ -31,14 +31,15 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_id'] !== null) {
 <h1><img src="images/BookIcon-Icons8.png" class="book-icon" alt="LittleReads Book Logo"> LittleReads</h1>
 </div>
 <div class="midnav">
-<a href="littlereads-profilepage.php" class="shelf-btn">My Shelf</a>
+<a href="profilepage.php" class="shelf-btn">My Shelf</a>
 </div>
 <div class="rightnav">
 <nav>
 <ul>
-<li><a href="littlereads-homepage.html">Home</a></li>
-<li><a href="littlereads-explore.html">Explore</a></li>
-<li><a href="littlereads-contactpage.html">Contact</a></li>
+<!--link-->
+<li><a href="littlereads-homepage.php">Home</a></li>
+<li><a href="littlereads-explore.php">Explore</a></li>
+<li><a href="littlereads-contactpage.php">Contact</a></li>
 <li class="dropdown">
 <button class="dropdown-btn"><img src="images/MenuIcon-Icons8.png" class="menu-icon" alt="Drop down menu icon"></button>
 <div class="dropdown-menu">
