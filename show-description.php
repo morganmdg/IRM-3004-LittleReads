@@ -59,34 +59,34 @@ if(isset($params['isbn'])) {
                     $conn->query($sql_add_user);
                 }
 
-                // Check if the user's shelf is full
-                $sql_get_number_shelved = "SELECT NumberShelved FROM myshelf WHERE UserID = '$user_id'";
-                $result_get_number_shelved = $conn->query($sql_get_number_shelved);
-                
-                if ($result_get_number_shelved->num_rows > 0) {
-                    $row = $result_get_number_shelved->fetch_assoc();
-                    $number_shelved = $row['NumberShelved'];
+                // Check if the book is already on the shelf
+                $sql_get_shelf = "SELECT Shelved FROM myshelf WHERE UserID = '$user_id'";
+                $result_get_shelf = $conn->query($sql_get_shelf);
 
-                    if ($number_shelved >= 15) {
-                        echo "Your shelf is full.";
+                if ($result_get_shelf->num_rows > 0) {
+                    $row = $result_get_shelf->fetch_assoc();
+                    $shelved = $row['Shelved'];
+
+                    // Check if the book is already on the shelf
+                    if (strpos($shelved, $isbn) !== false) {
+                        echo "This book is already on your shelf.";
                     } else {
                         // Increment the NumberShelved value
-                        $number_shelved++;
-                        $sql_update_number_shelved = "UPDATE myshelf SET NumberShelved = $number_shelved WHERE UserID = '$user_id'";
-                        $conn->query($sql_update_number_shelved);
+                        $sql_get_number_shelved = "SELECT NumberShelved FROM myshelf WHERE UserID = '$user_id'";
+                        $result_get_number_shelved = $conn->query($sql_get_number_shelved);
+                        
+                        if ($result_get_number_shelved->num_rows > 0) {
+                            $row = $result_get_number_shelved->fetch_assoc();
+                            $number_shelved = $row['NumberShelved'];
 
-                        // Check if the book is already on the shelf
-                        $sql_get_shelf = "SELECT Shelved FROM myshelf WHERE UserID = '$user_id'";
-                        $result_get_shelf = $conn->query($sql_get_shelf);
-
-                        if ($result_get_shelf->num_rows > 0) {
-                            $row = $result_get_shelf->fetch_assoc();
-                            $shelved = $row['Shelved'];
-
-                            // Check if the book is already on the shelf
-                            if (strpos($shelved, $isbn) !== false) {
-                                echo "This book is already on your shelf.";
+                            if ($number_shelved >= 15) {
+                                echo "Your shelf is full.";
                             } else {
+                                // Increment the NumberShelved value
+                                $number_shelved++;
+                                $sql_update_number_shelved = "UPDATE myshelf SET NumberShelved = $number_shelved WHERE UserID = '$user_id'";
+                                $conn->query($sql_update_number_shelved);
+
                                 // Append "-" to the ISBN and update the shelf
                                 $isbn_shelved = $shelved . $isbn . "-";
                                 $sql_update_shelf = "UPDATE myshelf SET Shelved = '$isbn_shelved' WHERE UserID = '$user_id'";
@@ -97,18 +97,25 @@ if(isset($params['isbn'])) {
                                 }
                             }
                         } else {
-                            // If the shelf is empty, add the ISBN directly
-                            $isbn_shelved = $isbn . "-";
-                            $sql_add_to_shelf = "INSERT INTO myshelf (UserID, Shelved) VALUES ('$user_id', '$isbn_shelved')";
-                            if ($conn->query($sql_add_to_shelf) === TRUE) {
-                                echo "Book added to shelf successfully!";
-                            } else {
-                                echo "Error adding book to shelf: " . $conn->error;
-                            }
+                            echo "Error retrieving NumberShelved value for user.";
                         }
                     }
                 } else {
-                    echo "Error retrieving NumberShelved value for user.";
+                    // If the shelf is empty, add the ISBN directly
+                    $isbn_shelved = $isbn . "-";
+                    $sql_add_to_shelf = "INSERT INTO myshelf (UserID, Shelved) VALUES ('$user_id', '$isbn_shelved')";
+                    if ($conn->query($sql_add_to_shelf) === TRUE) {
+                        // Increment the NumberShelved value
+                        $number_shelved++;
+                        $sql_update_number_shelved = "UPDATE myshelf SET NumberShelved = $number_shelved WHERE UserID = '$user_id'";
+                        if ($conn->query($sql_update_number_shelved) === TRUE) {
+                            echo "Book added to shelf successfully!";
+                        } else {
+                            echo "Error updating NumberShelved value: " . $conn->error;
+                        }
+                    } else {
+                        echo "Error adding book to shelf: " . $conn->error;
+                    }
                 }
             } else {
                 echo "User ID not found in session";
