@@ -45,7 +45,7 @@ if(isset($params['isbn'])) {
         $imageLink = $book['ImageLink']; // Extract image link
 
         // Display the book information within the desired div
-        echo "<div class='description-display-block' id='display-block'>";
+        echo "<div class='description-display-books' id='display-block'>";
         echo "<h1>Title: $title</h1>";
         echo "<p>Author: $author</p>";
         echo "<p>Genres: $genres</p>";
