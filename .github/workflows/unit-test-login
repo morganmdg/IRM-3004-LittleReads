@@ -1,0 +1,33 @@
+<?php
+
+use PHPUnit\Framework\TestCase;
+
+class LoginTest extends TestCase {
+    public function testLoginSuccess() {
+        // Simulate a POST request with login data
+        $_SERVER["REQUEST_METHOD"] = "POST";
+        $_POST['signin'] = true;
+        $_POST['username'] = 'valid_username';
+        $_POST['password'] = 'valid_password';
+
+        // Include the PHP file to test
+        include 'littlereads-login.php';
+
+        // Perform assertions based on the expected output
+        $this->expectOutputString('Welcome back, valid_username!');
+    }
+
+    public function testLoginFailure() {
+        // Simulate a POST request with incorrect login data
+        $_SERVER["REQUEST_METHOD"] = "POST";
+        $_POST['signin'] = true;
+        $_POST['username'] = 'invalid_username';
+        $_POST['password'] = 'invalid_password';
+
+        // Include the PHP file to test
+        include 'littlereads-login.php';
+
+        // Perform assertions based on the expected output
+        $this->expectOutputString('Incorrect password. Please try again.');
+    }
+}
