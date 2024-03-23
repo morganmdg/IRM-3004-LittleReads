@@ -146,14 +146,18 @@ Search button
 /* Grey box */
 .description-display-block {
   background-color: #ddd;
-  margin: 50px 130px 10px;
+  margin-right: 300px;
+  margin-left: 80px;
+  margin-top: 50px;
   border-radius: 15px;
   width: 1550px;
   Height: 730px;
-  display: flex;
+  display: block;
 }
 
-/* Share button */
+/* margin: 50px 130px 10px; */
+
+/* Share button 
 .desciption-share-btn {
   background-color: #fbd055;
   border-radius: 15px;
@@ -171,7 +175,7 @@ Search button
   cursor: pointer;
 }
 
-/* Review button */
+Review button
 .desciption-reviews-btn {
   background-color: #F28C28;
   border-radius: 15px;
@@ -187,6 +191,7 @@ Search button
   align-self: flex-end;
   cursor: pointer;
 }
+*/
 
 /* Add to shelf button */
 .description-shelf-btn {
@@ -194,12 +199,21 @@ Search button
   border-radius: 15px;
   font-family: "Nunito Sans", sans-serif;
   color: #333;
-  padding: 20px;
+  padding: 30px;
   border: none;
   width: 20%;
-  margin-bottom: 55px;
+  margin-bottom: 200px;
   font-weight: 700;
   font-size: 20px;
   align-self: flex-end;
   cursor: pointer;
+  margin-left: 400px;
+  position: absolute;
+}
+
+.description-display-books {
+  font-family: "Nunito Sans", sans-serif;
+  color: #38b6ff;
+  font-weight: 800;
+  font-size: 20px;
 }
