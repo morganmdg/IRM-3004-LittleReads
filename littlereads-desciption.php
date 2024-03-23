@@ -46,9 +46,13 @@
 <!-- Placeholder for book information -->
 
 <!-- Buttons for Share, Reviews, and Add to Shelf -->
+</div>
 <button class="desciption-share-btn">Share&nbsp;&nbsp;&nbsp;<i class="fa fa-share-square"></i></button>
 <button class="desciption-reviews-btn">Reviews&nbsp;&nbsp;&nbsp;<i class="fa fa-star"></i></button>
-<button class="desciption-shelf-btn">Add to shelf&nbsp;&nbsp;&nbsp;<i class="fa fa-plus-square"></i></button>
+<button class="description-shelf-btn" onclick="addToShelf()">Add to Shelf&nbsp;&nbsp;&nbsp;<i class="fa fa-plus-square"></i></button>
+
+<div id="messages">
+    <!-- PHP messages will be displayed here -->
 </div>
 
 <script>
@@ -56,9 +60,24 @@
     $(document).ready(function(){
         // Fetch and insert books from show-description.php into books-container
         $('#display-block').load('show-description.php');
-        
     });
-
+    
+    // Function to add book to shelf
+    function addToShelf() {
+        $.ajax({
+            url: 'show-description.php',
+            type: 'POST',
+            data: { add_to_shelf: true }, // Send flag to indicate adding to shelf
+            success: function(response) {
+                // Handle success response
+                $('#messages').html(response); // Display any messages from PHP
+            },
+            error: function(xhr, status, error) {
+                // Handle error
+                console.error(xhr.responseText);
+            }
+        });
+    }
 </script>
 
 </body>
