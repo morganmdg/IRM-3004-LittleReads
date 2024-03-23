@@ -40,11 +40,9 @@
 </header>
 <div class="welcome-message"> <h1> Make reading fun with LittleReads! </h1></div>
 <div class="welcome-message-body">
-<h2>Welcome to LittleReads!</h2>
-<h2> We're an online reading community dedicated to helping kids find new and exciting books perfect for their age range, reading level, and personal tastes.
-We believe that reading should be fun and safe, that's why we work closely with parents and kids to create a collaborative space where everyone 
-can come together to discover new stories and share their love for reading.</h2>
-<h2>Ready to join the fun? Sign up with the help of a parent below and create an account today! </h2>
+<center><h2> LittleReads is an online reading community dedicated to helping kids find new and exciting books that are perfect for their age range, reading level, and personal tastes.
+We believe that reading should be fun and safe, that's why we work with parents and kids to create a collaborative space where kids can come together to discover books they'll love.</h2></center>
+<div class="welcome-prompt"><center><h2>Ready to join the fun? Sign up with the help of a parent below and create an account today! </h2></center></div>
 </div>
 <div class="btn-container">
   <button class="btn-1" onclick="openSignInPopup()">Sign in</button>

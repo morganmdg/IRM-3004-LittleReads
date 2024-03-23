@@ -39,10 +39,11 @@
 </div>
 </header>
 
+<div class="contact-header"><center><h1> Contact us</h1></center></div>
+<img src="images/BeeIcon.png" class="contact-bee" alt="Bee" />
 <div class="contact">
-<center><h1> Contact us</h1></center>
-<center><h3> Have any questions or just want to say hi? </h3><h3> Contact us below. We'd love to hear from you.</h3></center>
-<center><img src="images/icons8-email.png" class="email-icon" alt="contact us email icon"><p> Littlereads@outlook.ca</p></center>
+<center><h2> Have any questions or just want to say hi? </h2><h2> Contact us below. We'd love to hear from you.</h2></center>
+<center><img src="images/icons8-email.png" class="email-icon" alt="contact us email icon"><p class="email-link"> Littlereads@outlook.ca</p></center>
 </div>
 
 </body>

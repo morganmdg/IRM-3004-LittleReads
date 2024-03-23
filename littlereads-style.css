@@ -23,10 +23,33 @@ body {
   padding-left: 15px;
 }
 
-.contact{
-	margin-top: 150px;
+ /* Contact page */
+ .email-icon{
+	width: 60px;
+	margin-top: 50px;
 }
 
+.email-link{
+	color: #38b6ff;
+	font-weight: bold;
+}
+
+.contact-header{
+	margin-top: 120px;
+	color: #38b6ff;
+}
+
+.contact{
+	margin-top: 50px;
+}
+
+.contact-bee {
+    position: fixed;
+    width: 300px; 
+    height: auto;
+    margin-left: 100px;
+  }
+  
 .book-icon,
 .shelf-btn,
 .dropdown-btn,
@@ -174,6 +197,11 @@ nav a:hover {
   text-align: left;
   margin-left: 40px;
   margin-right: 70px;
+  margin-top: 40px;
+}
+
+.welcome-prompt {
+	margin-top: 40px;
 }
 
 /* sign in pop up */
@@ -293,7 +321,7 @@ nav a:hover {
     bottom: 200px; 
 	left: 120px;
 	width: 60px; 
-  }
+  } 
 
 /* sign up pop up */
 
