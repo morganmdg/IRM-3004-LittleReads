@@ -17,14 +17,15 @@
 <h1><img src="images/BookIcon-Icons8.png" class="book-icon" alt="LittleReads Book Logo"> LittleReads</h1>
 </div>
 <div class="midnav">
-<a href="littlereads-profilepage.html" class="shelf-btn">My Shelf</a>
+<a href="profilepage.php" class="shelf-btn">My Shelf</a>
 </div>
 <div class="rightnav">
 <nav>
 <ul>
-<li><a href="littlereads-homepage.html">Home</a></li>
-<li><a href="littlereads-explore.html">Explore</a></li>
-<li><a href="littlereads-contactpage.html">Contact</a></li>
+<!--link-->
+<li><a href="littlereads-homepage.php">Home</a></li>
+<li><a href="littlereads-explore.php">Explore</a></li>
+<li><a href="littlereads-contactpage.php">Contact</a></li>
 <li class="dropdown">
 <button class="dropdown-btn"><img src="images/MenuIcon-Icons8.png" class="menu-icon" alt="Drop down menu icon"></button>
 <div class="dropdown-menu">
@@ -38,10 +39,11 @@
 </div>
 </header>
 
+<div class="contact-header"><center><h1> Contact us</h1></center></div>
+<img src="images/BeeIcon.png" class="contact-bee" alt="Bee" />
 <div class="contact">
-<center><h1> Contact us</h1></center>
-<center><h3> Have any questions or just want to say hi? </h3><h3> Contact us below. We'd love to hear from you.</h3></center>
-<center><img src="images/icons8-email.png" class="email-icon" alt="contact us email icon"><p> Littlereads@outlook.ca</p></center>
+<center><h2> Have any questions or just want to say hi? </h2><h2> Contact us below. We'd love to hear from you.</h2></center>
+<center><img src="images/icons8-email.png" class="email-icon" alt="contact us email icon"><p class="email-link"> Littlereads@outlook.ca</p></center>
 </div>
 
 </body>
