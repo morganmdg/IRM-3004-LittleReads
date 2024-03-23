@@ -45,6 +45,9 @@ if(isset($params['isbn'])) {
         $isbn = $book['ISBN'];
         $imageLink = $book['ImageLink']; // Extract image link
 
+        // Initialize $number_shelved
+        $number_shelved = 0;
+
         // Check if the "Add to Shelf" button is clicked
         if (isset($_POST['add_to_shelf'])) {
             // Check if user_id is set in the session
