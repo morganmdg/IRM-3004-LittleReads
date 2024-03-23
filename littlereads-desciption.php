@@ -42,15 +42,10 @@
 </nav>
 </div>
 </header>
+<!-- Button for Add to Shelf -->
+<button class="description-shelf-btn">Add to shelf&nbsp;&nbsp;&nbsp;<i class="fa fa-plus-square"></i></button>
 <div class="description-display-block" id="display-block">
-<!-- Placeholder for book information -->
-
-<!-- Buttons for Share, Reviews, and Add to Shelf -->
-<button class="desciption-share-btn">Share&nbsp;&nbsp;&nbsp;<i class="fa fa-share-square"></i></button>
-<button class="desciption-reviews-btn">Reviews&nbsp;&nbsp;&nbsp;<i class="fa fa-star"></i></button>
-<button class="desciption-shelf-btn">Add to shelf&nbsp;&nbsp;&nbsp;<i class="fa fa-plus-square"></i></button>
 </div>
-
 <script>
     // When the page is fully loaded
     $(document).ready(function(){
