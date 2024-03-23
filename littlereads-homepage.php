@@ -17,14 +17,15 @@
 <h1><img src="images/BookIcon-Icons8.png" class="book-icon" alt="LittleReads Book Logo"> LittleReads</h1>
 </div>
 <div class="midnav">
-<a href="littlereads-profilepage.html" class="shelf-btn">My Shelf</a>
+<a href="profilepage.php" class="shelf-btn">My Shelf</a>
 </div>
 <div class="rightnav">
 <nav>
 <ul>
-<li><a href="littlereads-homepage.html">Home</a></li>
-<li><a href="littlereads-explore.html">Explore</a></li>
-<li><a href="littlereads-contactpage.html">Contact</a></li>
+<!--link-->
+<li><a href="littlereads-homepage.php">Home</a></li>
+<li><a href="littlereads-explore.php">Explore</a></li>
+<li><a href="littlereads-contactpage.php">Contact</a></li>
 <li class="dropdown">
 <button class="dropdown-btn"><img src="images/MenuIcon-Icons8.png" class="menu-icon" alt="Drop down menu icon"></button>
 <div class="dropdown-menu">
@@ -39,11 +40,9 @@
 </header>
 <div class="welcome-message"> <h1> Make reading fun with LittleReads! </h1></div>
 <div class="welcome-message-body">
-<h2>Welcome to LittleReads!</h2>
-<h2> We're an online reading community dedicated to helping kids find new and exciting books perfect for their age range, reading level, and personal tastes.
-We believe that reading should be fun and safe, that's why we work closely with parents and kids to create a collaborative space where everyone 
-can come together to discover new stories and share their love for reading.</h2>
-<h2>Ready to join the fun? Sign up with the help of a parent below and create an account today! </h2>
+<center><h2> LittleReads is an online reading community dedicated to helping kids find new and exciting books that are perfect for their age range, reading level, and personal tastes.
+We believe that reading should be fun and safe, that's why we work with parents and kids to create a collaborative space where kids can come together to discover books they'll love.</h2></center>
+<div class="welcome-prompt"><center><h2>Ready to join the fun? Sign up with the help of a parent below and create an account today! </h2></center></div>
 </div>
 <div class="btn-container">
   <button class="btn-1" onclick="openSignInPopup()">Sign in</button>
@@ -80,6 +79,12 @@ can come together to discover new stories and share their love for reading.</h2>
         <button type="button" class="cancel-btn" onclick="closePopup('signup-popup')">Cancel</button>
     </div>
 </div>
+
+<!--images-->
+ <img src="images/BeeIcon.png" class="bee-image" alt="Bee" />
+ <img src="images/flower.png" class="flower-image" alt="Flower one">
+ <img src="images/flower-two.png" class="flower-image two" alt="Flower two">
+ <img src="images/flower-small.png" class="flower-image small" alt="Flower three">
 
 <div id="messages">
     <!-- PHP messages will be displayed here -->

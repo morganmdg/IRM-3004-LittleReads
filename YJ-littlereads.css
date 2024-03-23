@@ -118,28 +118,27 @@ Search button
 
 /* Formatting the books container */
 .books-container {
-  margin-top: -60px;
-  margin-bottom: 30px;
-  margin-right: 10px;
+  margin-top: 20px; 
+  margin-left: 10px;
+  margin-right: 20px;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
-  justify-content: center;
-
+  justify-content: space-between; 
 }
 
 /* Formatting the individual books */
 .book {
   font-family: "Nunito Sans", sans-serif;
   color: #38b6ff;
-  font-weight: 800;
-  font-size: 20px;
-  width: 30%;
-  justify-content: center;
-  white-space: nowrap;
-  margin-bottom: 40px;
-  margin-right: 310px;
-  padding-left: 230px;
+  font-weight: 20;
+  font-size: 16px; 
+  width: 400px;; 
+  margin-bottom: 20px; 
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: #f9f9f9; 
+  border-radius: 10px;
 }
 
 /* Description page CSS */
