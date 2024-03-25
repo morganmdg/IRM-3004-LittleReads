@@ -13,44 +13,35 @@ user interactions, and revenue from ads.
 **Screenshots:**
 
 - Home Page
-![Home Page](Images/Home%20Page.jpg)
+![Home Page](Images/_home%20page_.png)
 
 - Explore Page
-![Explore Page](Images/Explore%20Page.png)
+![Explore Page](Images/_explore%20page_.png)
 
 - Description Page
-![Description Page](Images/Description%20Page.png)
+![Description Page](Images/_description%20page_.png)
+
+- Shelf Page
+![Shelf Page](Images/_shelf%20page_.png)
 
 **High-level Feature Status Overview:**
 
 Completed:
 
+- We were able to fully integrate the frontend and backend code.
 - Integration of the database with LittleReads home page:
 Users now have access to the sign-in/sign-up pages,
 and their interactions are recorded in the database for data storage purposes.
-- Sign-in functionality enabling users to access books and bibliographic information:
-Users can securely log in to their accounts and access book details and
-bibliographic information stored in the database.
-
-Pending:
-
-- Development of Home Page: Backend integration for sign-in is complete;
-now working on finalizing HTML/CSS components for a comprehensive user experience overview.
-- Development of Explore Page: The explore page,
-designed for users to browse and discover books based on various criteria, is not yet fully developed.
-Although a skeleton page exists, there are ongoing challenges with integrating frontend and backend code.
-This integration is vital for enabling effective book exploration and discovery.
-- Development of Description Page: The description page,
-acting as a centralized location for book descriptions upon user selection, has not been fully developed yet.
-This delay is attributed to complications in pulling backend information, specifically related to the linter.
-This page plays a crucial role in providing detailed information about selected books.
-- Functional implementation of 'My Shelf' Page:
-The 'my shelf' feature, allowing users to save and organize their favorite books, is still under development.
-Challenges persist in integrating frontend and backend components.
-This feature enhances the user experience by offering a personalized reading list.
-- Complete integration of frontend and backend code: While progress has been made in some areas,
-the full integration of frontend and backend code remains ongoing.
-This integration is essential for ensuring the platform's overall functionality.
+- **Sign-in & Sign-up**: functionality enabling users to securely
+sign up and log in to their accounts is now complete.
+- **Home Page**: Backend integration for sign-in & sign-up is complete;
+and we have finished the HTML/CSS components needed for a comprehensive user experience.
+- **Explore Page**: The explore page,
+designed for users to browse and discover books based on various criteria, is now complete.
+- **Description Page**: The description page, which
+shows an image of the book cover, title, author, genre, language, and isbn is now complete.
+- **Shelf Page**: The 'my shelf' feature, allowing users to
+save and organize their favorite books, is now complete.
 
 Cancelled:
 
